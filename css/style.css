@@ -13,6 +13,24 @@
     color: white;
 }
 
+.img{
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    margin: 0px auto;
+    border-radius: 5px;
+  }
+  
+  .card{
+    width: 15rem;
+    height: fit-content;
+    border: 2px solid green;
+    box-shadow: 8px 10px 12px -5px rgb(0 0 0 / .4);
+  }
 
+  #logo:hover{
+    transform:translateY(-10%);
+    transform: scale(1.2);
+  }
 
 
