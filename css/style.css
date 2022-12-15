@@ -20,6 +20,11 @@
     color: white;
 }
 
+.container{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .img{
     display: block;
     width: 100%;
