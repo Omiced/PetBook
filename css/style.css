@@ -41,3 +41,39 @@
   }
 
 
+  @keyframes pata{ 
+    from{
+        opacity: 1;
+ }
+ to{
+        opacity: 0;
+ }
+}
+.patita{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    float: right;
+    animation-name: pata;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes pata{ 
+  from{
+      opacity: 1;
+}
+to{
+      opacity: 0;
+}
+}
+.patita2{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  float: left;
+  animation-name: pata;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;}
