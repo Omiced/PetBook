@@ -1,4 +1,11 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+
+.caja-font{
+    font-family: 'Laila', sans-serif;
+}
+
+
 
 .bg-verde{
     background-color: #00A86B; 
