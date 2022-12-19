@@ -48,6 +48,8 @@ function validarEmail(){
 btnEnviar.addEventListener ("click", function (event) {
     event.preventDefault();
 
+
+
     if (!validarNombre()){
         txtNombre.style.border = "red thin solid"
         lista += "<li>Se debe escribir un nombre válido</li>"
@@ -67,7 +69,10 @@ btnEnviar.addEventListener ("click", function (event) {
         lista += "<li>El mensaje de solo contener 100 caracteres</li>" 
         
     }
-
+    const nombre = txtNombre.value;
+    const numero = numeroTel.value;
+    const correo = inputEmail.value;
+    const mensaje = mensajeEl.value;
 
     // txtNombre.style.border ="";
     alertaValidaciones.style.display= "none"
@@ -79,9 +84,11 @@ btnEnviar.addEventListener ("click", function (event) {
             alertaValidacionesTexto.innerHTML="";
         },5000);
         return false;
+     
 
+}
 
-})
+)
 
 
 
@@ -100,6 +107,8 @@ numeroTel.addEventListener("blur", function(event){
 inputEmail.addEventListener("blur", function(event){
     event.preventDefault
     inputEmail.value = inputEmail.value.trim();
-})
+}
+ 
+)
 
 
