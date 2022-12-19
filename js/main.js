@@ -72,7 +72,9 @@ btnEnviar.addEventListener ("click", function (event) {
     const nombre = txtNombre.value;
     const numero = numeroTel.value;
     const correo = inputEmail.value;
-    const mensaje = mensajeEl.value;
+    const mensaje1 = mensajeEl.value;
+
+    enviarcorreo(nombre,numero,correo,mensaje1);
 
     // txtNombre.style.border ="";
     alertaValidaciones.style.display= "none"
@@ -84,7 +86,8 @@ btnEnviar.addEventListener ("click", function (event) {
             alertaValidacionesTexto.innerHTML="";
         },5000);
         return false;
-     
+
+        
 
 }
 
@@ -111,4 +114,17 @@ inputEmail.addEventListener("blur", function(event){
  
 )
 
+function enviarcorreo(nombre,numero,correo,mensaje1){
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "empresaPetBook@gmail.com",
+        Password : "9F11527D0A8244A1E7FA577D4A0311747A63",
+        To : 'empresaPetBook@gmail.com',
+        From:correo,
+        Subject:sujeto,
+        Body : `${mensaje1}, telefono:${telefono} `,
+    }).then(
+      message => alert(message)
+    );
+} 
 
