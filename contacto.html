@@ -71,14 +71,14 @@
         </div>
         <div class="col">
           <form action="#" id="form-contacto">
-            <div class="mb-3">
-              <label for="input-name class="form-label"
+            <div  class="mb-3">
+              <label for="input-name"   class="form-label"
                 >Nombre</label
               >
               <input
                 type="text"
                 class="form-control bg-green2"
-                id="input-name"
+                id="nombre"
                 name="name"
                 placeholder="Juan Perez"
               />
@@ -117,7 +117,12 @@
                 placeholder="Hola me pongo en contacto con ustedes por...."
               ></textarea>
             </div>
-            <button type="button" class="btn btn-green" id="btn-enviar">
+            <div class="col-md-8 order-md-1">
+              <h4 class="mb-3">Agregar Productos</h4>
+              <div class="alert alert-danger fade show" style="display:none;" role="alert" id="alertaValidaciones">
+                <p id="alertaValidacionesTexto"></p>
+          </div>
+            <button type="button" class="btn btn-green" id="btnEnviar">
               Enviar
             </button>
           </form>
