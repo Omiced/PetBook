@@ -4,14 +4,22 @@ let numeroTel = document.getElementById("numeroTel")
 let inputEmail = document.getElementById("inputEmail")
 let alertaValidacionesTexto= document.getElementById ("alertaValidacionesTexto")
 let alertaValidaciones = document.getElementById ("alertaValidaciones")
+let mensajeEl = document.getElementById("exampleFormControlTextarea1");
 
 
 //Expresiones Regulares - REGEX
 let numeroRegex = /^[0-9]{10}$/;
 let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-
 let lista ="<ul>"
+
+
+function mensaje(){
+if (mensajeEl.value.length>100){
+return false}
+mensajeEl.value = mensajeEl.value.replaceAll("  ","");
+return true
+}
+
 
 
 function validarNombre() {
@@ -35,6 +43,8 @@ function validarEmail(){
 
 
 
+
+
 btnEnviar.addEventListener ("click", function (event) {
     event.preventDefault();
 
@@ -50,7 +60,12 @@ btnEnviar.addEventListener ("click", function (event) {
 
     if(!validarEmail()){
         numeroTel.style.border = "red thin solid"
-        lista += "<li>El correo debe ser válido</li>"
+        lista += "<li>El correo debe ser válido</li>"    
+    }
+    if (!mensaje()){
+        mensajeEl.style.border = "red thin solid"
+        lista += "<li>El mensaje de solo contener 100 caracteres</li>" 
+        
     }
 
 
@@ -86,4 +101,5 @@ inputEmail.addEventListener("blur", function(event){
     event.preventDefault
     inputEmail.value = inputEmail.value.trim();
 })
+
 
