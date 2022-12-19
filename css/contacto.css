@@ -4,11 +4,18 @@
 .navbar
 {
     background-color: green;
- 
     color: azure;
 }
 
 .nav-link
 {
     color: aliceblue;
+}
+
+.btn-green{
+   background-color:  #00A86B;
+}
+
+.bg-green2{
+    background-color: #CCEEE1;
 }
