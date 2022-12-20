@@ -1,5 +1,5 @@
 
-    
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
 
 .navbar
 {
@@ -14,7 +14,7 @@
 }
 
 .btn-green{
-   background-color:  #00A86B;
+background-color:  #00A86B;
 }
 
 .bg-green2{
@@ -23,8 +23,26 @@
 .perrito{
     position:relative ;
     float: right;
-  }
-  li{
+}
+li{
     margin-right: 150px;
-   
-  }
+
+}
+
+
+
+.estilo-form{
+    border-radius: 5%;
+    font-family: 'Laila', sans-serif;
+    text-align: center;
+    padding-top: 8rem;
+
+}
+
+
+
+
+
+
+
+

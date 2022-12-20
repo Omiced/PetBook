@@ -39,7 +39,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-         
+
           <ul class="navbar-nav" style="margin: auto; color: aliceblue;">
             <!-- <div class="links-menu"> -->
               <li class="nav-item">
@@ -68,8 +68,7 @@
               </ul>
             </li>
           </ul>
-         
-                         
+
             <!-- </div> -->
           </ul>
           
@@ -79,26 +78,26 @@
 
     <main class="container w-90 mt-3 ">
       <div class="row row-cols-1 row-cols-md-2">
-        <div class="col bg-green2" style = "border-radius:5%" id="descripcion">
+        <div class="col bg-green2 estilo-form" id="descripcion">
           <h1>Formulario de contacto</h1>
           <p>¿Tienes algún problema o sugerencia? <br> Nos gustaría que 
-          nos des tu opinión, mándanos tus datos y nos contactaremos 
-        contigo para poder tener una mejor comunidad. <br> 
-      Tu opinión es muy importante y nos ayuda a mejorar nuestra 
-      <br> comunidad.</p>
+            nos des tu opinión, mándanos tus datos y nos contactaremos 
+          contigo para poder tener una mejor comunidad. <br> 
+          Tu opinión es muy importante y nos ayuda a mejorar nuestra 
+          <br> comunidad.</p>
         </div>
         <div class="col mt-3">
           <form action="#" id="form-contacto">
             <div  class="mb-3">
-              <label for="input-name"   class="form-label"
-                >Nombre</label
+              <label for="input-name" class="form-label"
+                >Primer nombre</label
               >
               <input
                 type="text"
                 class="form-control bg-green2"
                 id="nombre"
                 name="name"
-                placeholder="Juan Perez"
+                placeholder="Juan"
               />
             </div>
             <div class="mb-3">
@@ -136,10 +135,11 @@
               ></textarea>
             </div>
             <div class="col-md-8 order-md-1">
-              <div class="alert alert-danger fade show" style="display:none;" role="alert" id="alertaValidaciones">
+              <div class="alert alert-danger fade show" style="display:none" role="alert" id="alertaValidaciones">
+                <!-- <ul id="alertaValidacionesTexto"></ul> -->
                 <p id="alertaValidacionesTexto"></p>
           </div>
-          <button type="button" id="btnEnviar" class="btn btn-green">Primary</button>
+          <button type="button" id="btnEnviar" class="btn btn-green">Enviar</button>
           </form>
         </div>
       </div>
