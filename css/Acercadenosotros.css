@@ -83,3 +83,7 @@ to{
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: alternate;}
+
+  .center-cosas{
+    margin: 0 auto;
+  }
