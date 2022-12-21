@@ -11,7 +11,7 @@ let mensajeEl = document.getElementById("exampleFormControlTextarea1");
 let idTimeout;
 
 // let nombreRegex = /^[A-Z][a-zA-Z]+$/;
-let nombreRegex = /^[A-Z][a-zA-Z]+$/;
+let nombreRegex = /(^[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)$/;
 let numeroRegex = /^[0-9]{10}$/;
 let emailRegex =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -34,7 +34,7 @@ btnEnviar.addEventListener("click", function (event) {
   if (txtNombre.value.match(nombreRegex) == null) {
     txtNombre.style.border = "solid red 5px";
     alertaValidaciones.style.display = "block";
-    alertaValidaciones.innerHTML += `<li>Ingresa un nombre válido</li>`;
+    alertaValidaciones.innerHTML += `<li>El nombre debe contener más de dos carácteres</li>`;
   } else {
     txtNombre.style.border = "solid green 5px";
     // alertaValidaciones.style.display = "none";
