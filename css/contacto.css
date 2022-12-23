@@ -5,6 +5,9 @@
     font-family: 'Laila', sans-serif;
     
 }
+body{
+    overflow-x: hidden;
+  }
 
 .fondo-img{
     width: 100px;

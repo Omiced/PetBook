@@ -1,0 +1,12 @@
+footer{
+  background-color: #000;
+  color: #d9ece4;
+}
+
+footer .nav-link{
+  color:#d9ece4;
+}
+
+footer  .nav-link:hover{
+  color: #00A86b;
+}
