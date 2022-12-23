@@ -76,6 +76,14 @@ btnEnviar.addEventListener("click", function (event) {
     validos++;
   }
 
+  if (mensajeEl.value.length === 0){
+    alertaValidaciones.style.display = "block";
+    alertaValidaciones.innerHTML += `<li>El mensaje no puede estar vacio</li>`;
+    mensajeEl.style.border = "solid red 5px";
+ }
+
+
+
   if (idTimeout != undefined && idTimeout != null) {
     clearTimeout(idTimeout);
   }
@@ -110,4 +118,4 @@ function enviarcorreo(nombre, numero, correo, mensaje1) {
     Subject: nombre,
     Body: `Recibio un mensaje de ${nombre}, El mensaje es: ${mensaje1}, telefono:${numero} y correo ${correo}`,
   }).then((message) => alert(message));
-}
+}//btnenviar
