@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+
+.caja-font{
+    font-family: 'Laila', sans-serif;
+    
+}
+
+.fondo-img{
+    width: 100px;
+    height: 50px;
+}
+#logo:hover{
+    transform:translateY(-10%);
+    transform: scale(1.2);
+  }
+
+.bg-verde{
+    background-color: #00A86B; 
+}
+.nav-link
+{
+    color: aliceblue;
+    
+}
+#navbarNav ul li a {
+    color: white;
+    margin-right: 50px;
+}
+
+.btn-green{
+background-color:  #00A86B;
+}
+
+.bg-green2{
+    background-color: #CCEEE1;
+}
+.perrito{
+    position:relative ;
+    float: right;
+}
+li{
+    margin-right: 150px;
+
+}
+
+
+
+.estilo-form{
+    border-radius: 5%;
+    font-family: 'Laila', sans-serif;
+    text-align: center;
+    padding-top: 8rem;
+
+}
+.container{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
