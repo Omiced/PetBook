@@ -10,3 +10,12 @@ footer .nav-link{
 footer  .nav-link:hover{
   color: #00A86b;
 }
+
+footer p {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.nav-item{
+  margin-right: 0;
+}
