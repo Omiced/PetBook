@@ -91,16 +91,25 @@
           </div>
           <div class="col mt-3">
               <h3>Crear una cuenta</h3>
-              <form action="#" id="form-contacto">
-                  <div class="mb-3">
-                      <label for="input-name" class="form-label">Nombre de la mascota</label>
-                      <input type="text" class="form-control bg-green2" id="nombreMascota" name="name"
-                          placeholder="Copito" />
-                  </div>
+              <form action="#" class="formulario" id="formularioIndex">
+                <!--Nombre de la mascota-->  
+                <div class="formularioGrupo" id="grupoNombre">
+                      <label for="input-nombre" class="form-label">Nombre de la mascota</label>
+                      <div class="formularioInput">
+                         <input type="text" class="form-control bg-green2" name="inputNombre" id="inputNombre" 
+                          placeholder="Copito">
+                      </div>
+                      <div class="alert alert-danger" role="error">
+                        <li>Nombre no válido.</li>
+                        <li>El nombre no puede estar vacio</li>
+                        <li>El nombre solo puede contener letras, numeros.</li>
+                        </div>
+                      </div>
+                  <!--Especie-->
                   <div class="mb-3">
                       <label for="input-name" class="form-label">Especie de tu mascota</label>
                       <div>
-                        <select name="Especie"  class ="especie" id="Especie">
+                        <select name="Especie"  class ="especie" name="especie" id="especie">
                             <option value="">Canino</option>
                             <option value="">Felino</option>
                             <option value="">Equino</option>
@@ -112,36 +121,41 @@
                         </select>
                     </div>  
                   </div>
-
-                  <div class="mb-3">
+                  <!--Email-->
+                  <div class="formularioGrupo" id="grupoEmail">
                       <label for="input-email" class="form-label">Email del dueño</label>
-                      <input type="email" class="form-control bg-green2" id="inputEmail"
-                          placeholder="name@example.com" />
-                  </div>
-
-
-                  <div class="mb-3">
-                      <label for="input-email" class="form-label">Contraseña</label>
-                      <input type="password" class="form-control bg-green2" id="password" placeholder="********" />
-                  </div>
-
-
-                  <div class="mb-3">
-                      <label for="input-email" class="form-label">Repetir contraseña</label>
-                      <input type="password" class="form-control bg-green2" id="RepeatPassword"
-                          placeholder="********" />
-                  </div>
-
-                  <div class="col-md-8 order-md-1">
-                      <div class="alert alert-danger fade show" style="display:none" role="alert"
-                          id="alertaValidaciones">
-                          <!-- <ul id="alertaValidacionesTexto"></ul> -->
-                          <p id="alertaValidacionesTexto"></p>
+                      <input type="email" class="form-control bg-green2" name="inputEmail" id="inputEmail"
+                      placeholder="name@example.com" />
+                      <div class="alert alert-danger" role="error">
+                          <li>Ingresa un email válido</li>
+                          <li>Ejemplo: gatitaflow@gmail.com</li>
                       </div>
+                  </div>
+                 
+                  <!--contraseña-->
+                  <div class="formularioGrupo" id="grupoPassword">
+                      <label for="input-password" class="form-label">Contraseña</label>
+                      <input type="password" class="form-control bg-green2" name="inputPassword" id="inputPassword" placeholder="********" />
+                      <div class="alert alert-danger" role="error">
+                        <li>Ingresa una contraseña valida</li>
+                        <li>La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.</li>
+                        <li>Ejemplo: UnaGatita60$</li>
+                     </div>               
+                  </div>
 
-                      <button type="button" id="btnRegistro" class="btn btn-green"><a href="" class="btn-link">Registrarme</a></button>
-                      <button type="button" id="btnLogin" class="btn btn-green"><a href="https://github.com/Omiced/PetBook/tree/develop" target="_blank" class="btn-link">Ya tengo cuenta</a></button>
-              </form>
+                  <!--repetircontraseña-->
+                  <div class="formularioGrupo" id="grupoPassword2">
+                      <label for="input-Password2" class="form-label">Repetir contraseña</label>
+                      <input type="password" class="form-control bg-green2" name="inputPassword2" id="inputPassword2"
+                          placeholder="********" />
+                          <div class="alert alert-danger" role="error">
+                            <li>La contraseña debe ser igual a la anterior</li>
+                        </div>         
+                  </div>
+                    <br>
+                  <div class="col-md-8 order-md-1">
+                      <button type="button" id="btnRegistro" class="btn btn-green"><a href="/Login.html" class="btn-link">Registrarme</a></button>
+                      <button type="button" id="btnLogin" class="btn btn-green"><a href="/Login.html" class="btn-link">Ya tengo cuenta</a></button>
               </form>
           </div>
       </div>

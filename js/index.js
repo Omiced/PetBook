@@ -1,133 +1,81 @@
-let btnRegistro = document.getElementById("btnRegistro");
-let nombreMascota = document.getElementById("nombreMascota");
-let especie = document.getElementById("especie");
-let inputEmail = document.getElementById("inputEmail");
-let contraseña = document.getElementById("password");
-let repetirContraseña = document.getElementById("RepeatPassword")
-let alertaValidaciones = document.getElementById("alertaValidaciones");
-let alertaValidacionesTexto = document.getElementById(
-  "alertaValidacionesTexto"
-);
 
-
-let idTimeout;
-
-// let nombreRegex = /^[A-Z][a-zA-Z]+$/;
-let nombreRegex = /(^[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)$/;
-let contraseñaRegex=/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
-let emailRegex =
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-btnRegistro.addEventListener("click", function (event) {
-  event.preventDefault();
-  let validos = 0;
-  alertaValidaciones.innerHTML = "";
-  if (
-    nombreMascota.value.match() != null &&
-    inputEmail.value.match(emailRegex) != null &&
-    contraseña.value.match(contraseñaRegex) != null &&
-    repetircontraseña.value.match(contraseñaRegex) != null 
-  ) {
-    alertaValidaciones.style.display = "none";
-  }
-
-
-
-
-
-  //LISTO NOMBRE
-  nombreMascota.value = nombreMascota.value.trim();
-  if (nombreMascota.value.match(nombreRegex) == null) {
-    nombreMascota.style.border = "solid red 5px";
-    alertaValidaciones.style.display = "block";
-    alertaValidaciones.innerHTML += `<li>El nombre debe contener más de dos carácteres</li>`;
-  } else {
-    nombreMascota.style.border = "solid green 5px";
-    // alertaValidaciones.style.display = "none";
-    validos++;
-  }
-
-
-
-  //LISTO especie
-  especie.value = especie.value.trim();
-  especie.value = especie.value.replaceAll(" ", "");
-  if (especie.value.match(numeroRegex) == null) {
-    alertaValidaciones.style.display = "block";
-    alertaValidaciones.innerHTML +=
-      "<li>El número telefónico no es válido</li>";
-    especie.style.border = "solid red 5px";
-  } else {
-    especie.style.border = "solid green 5px";
-    // alertaValidaciones.style.display = "none"
-    validos++;
-  }
+ const formulario = document.getElementById("formularioIndex");
+ const inputs = document.querySelectorAll("#formularioIndex input");
  
-//LISTO CONTRASEÑA
-if (contraseña.value.match(contraseñaRegex) == null) {
-    alertaValidaciones.style.display = "block";
-    alertaValidaciones.innerHTML += "<li>El correo no es válido</li>";
-    contraseña.style.border = "solid red 5px";
-  } else {
-    contraseña.style.border = "solid green 5px";
-    validos++;
-  }
-   
-  //LISTO REPETIRCONTRASEÑA
-  if (repetirContraseña.value.match(contraseñaRegex) == null) {
-      alertaValidaciones.style.display = "block";
-      alertaValidaciones.innerHTML += "<li>Repetir contraseña debe ser igual a la anterior</li>";
-      repetirContraseña.style.border = "solid red 5px";
-    } else {
-      repetirContraseña.style.border = "solid green 5px";
-      validos++;
-    }
-
-
-
-
-  //LISTO CORREO
-  if (inputEmail.value.match(emailRegex) == null) {
-    alertaValidaciones.style.display = "block";
-    alertaValidaciones.innerHTML += "<li>El correo no es válido</li>";
-    inputEmail.style.border = "solid red 5px";
-  } else {
-    inputEmail.style.border = "solid green 5px";
-    validos++;
-  }
-
-   if (idTimeout != undefined && idTimeout != null) {
-    clearTimeout(idTimeout);
-  }
-
-  if (validos == 4) {
-    idTimeout = setTimeout(function () {
-      nombreMascota.style.border = "";
-      especie.style.border = "";
-      inputEmail.style.border = "";
-      mensajeEl.style.border = "";
-    }, 2000);
-  } //==4
-
-  const nombre = nombreMascota.value;
-  const numero = especie.value;
-  const correo = inputEmail.value;
-  const mensaje1 = mensajeEl.value;
-  if (!nombre) return;
-  if (!numero) return;
-  if (!correo) return;
-  if (!mensaje1) return;
-  enviarcorreo(nombre, numero, correo, mensaje1);
-});
-
-function enviarcorreo(nombre, numero, correo, mensaje1) {
-  Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: "empresaPetBook@gmail.com",
-    Password: "9F11527D0A8244A1E7FA577D4A0311747A63",
-    To: "empresaPetBook@gmail.com",
-    From: "empresaPetBook@gmail.com",
-    Subject: nombre,
-    Body: `Recibio un mensaje de ${nombre}, El mensaje es: ${mensaje1}, telefono:${numero} y correo ${correo}`,
-  }).then((message) => alert(message));
-}//btnRegistro
+ const expresiones ={
+ nombreRegex:  /^[a-zA-Z0-9À-ÿ\s]{1,40}$/,
+ passwordRegex: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
+ emailRegex: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+ }
+ 
+ 
+ const validarFormulario = (e) => {
+   switch(e.target.name){
+     case "inputNombre":
+       if (expresiones.nombreRegex.test(e.target.value)){
+       
+         document.getElementById('inputNombre').classList.remove('inputIncorrecto')
+         document.getElementById('inputNombre').classList.add('inputCorrecto')
+         document.querySelector('#grupoNombre .alert-danger').classList.remove('alert-danger-activo')
+         return true
+       } else {
+         document.getElementById('inputNombre').classList.remove('inputCorrecto')
+         document.getElementById('inputNombre').classList.add('inputIncorrecto')
+         document.querySelector('#grupoNombre .alert-danger').classList.add('alert-danger-activo')
+         return false
+       }
+     break;
+     case "inputEmail":
+       if (expresiones.emailRegex.test(e.target.value)){
+       
+         document.getElementById('inputEmail').classList.remove('inputIncorrecto')
+         document.getElementById('inputEmail').classList.add('inputCorrecto')
+         document.querySelector('#grupoEmail .alert-danger').classList.remove('alert-danger-activo')
+         return true
+       } else {
+         document.getElementById('inputEmail').classList.remove('inputCorrecto')
+         document.getElementById('inputEmail').classList.add('inputIncorrecto')
+         document.querySelector('#grupoEmail .alert-danger').classList.add('alert-danger-activo')
+         return false
+       }
+      break;
+     case "inputPassword":
+       if (expresiones.passwordRegex.test(e.target.value)){
+       
+         document.getElementById('inputPassword').classList.remove('inputIncorrecto')
+         document.getElementById('inputPassword').classList.add('inputCorrecto')
+        document.querySelector('#grupoPassword .alert-danger').classList.remove('alert-danger-activo')
+         return true
+       } else {
+         document.getElementById('inputPassword').classList.remove('inputCorrecto')
+         document.getElementById('inputPassword').classList.add('inputIncorrecto')
+         document.querySelector('#grupoPassword .alert-danger').classList.add('alert-danger-activo')
+         return false
+       }
+     break;
+     case "inputPassword2":
+       const inputPassword = document.getElementById('inputPassword');
+       const inputPassword2 = document.getElementById('inputPassword2');
+        if (inputPassword.value !== inputPassword2.value){
+         document.getElementById('inputPassword2').classList.remove('inputCorrecto')
+         document.getElementById('inputPassword2').classList.add('inputIncorrecto')
+         document.querySelector('#grupoPassword2 .alert-danger').classList.add('alert-danger-activo')
+         return false
+        }else {
+         document.getElementById('inputPassword2').classList.remove('inputIncorrecto')
+         document.getElementById('inputPassword2').classList.add('inputCorrecto')
+        document.querySelector('#grupoPassword2 .alert-danger').classList.remove('alert-danger-activo')
+        return true
+        }
+       break;
+   }//switchid
+ }//validarFormulario
+ 
+ 
+ 
+ inputs.forEach((input) => {
+     input.addEventListener("keyup", validarFormulario );
+     input.addEventListener("blur",  validarFormulario );
+ });//inputs.forEach
+ 
+ 

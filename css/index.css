@@ -11,3 +11,27 @@ p{
 .img-container{
     text-align :center;
 }
+
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+
+
+.inputCorrecto {
+    border: solid forestgreen 5px;
+    opacity: 1;
+    
+}
+    
+.inputIncorrecto {
+    border: solid red 5px;
+    display: block;
+}
+
+.alert-danger{
+    margin-bottom: 0;
+    display: none;
+}
+
+.alert-danger-activo{
+    display: block;
+}
