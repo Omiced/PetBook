@@ -9,10 +9,6 @@ body{
     overflow-x: hidden;
   }
 
-.fondo-img{
-    width: 100px;
-    height: 50px;
-}
 #logo:hover{
     transform:translateY(-10%);
     transform: scale(1.2);
@@ -20,15 +16,6 @@ body{
 
 .bg-verde{
     background-color: #00A86B; 
-}
-.nav-link
-{
-    color: aliceblue;
-    
-}
-#navbarNav ul li a {
-    color: white;
-    margin-right: 50px;
 }
 
 .btn-green{
@@ -39,22 +26,19 @@ background-color:  #00A86B;
     background-color: #CCEEE1;
 }
 .perrito{
-    position:relative ;
-    float: right;
+    
+    left: 650px;
+    bottom: 250px;
+    width: 500px;
+    height: 500px;
 }
-li{
-    margin-right: 150px;
-
-}
-
-
 
 .estilo-form{
     border-radius: 5%;
     font-family: 'Laila', sans-serif;
     text-align: center;
     padding-top: 8rem;
-
+   
 }
 .container{
     margin-top: 2rem;
@@ -69,7 +53,10 @@ li{
 
 
 
+.form{
+    background-image: url(/images/perrito.jpg) 
 
+}
 
 
 

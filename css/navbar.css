@@ -5,9 +5,12 @@
     
 }
 
-.fondo-img{
-    width: 100px;
-    height: 50px;
+.navLogo{
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: -18px;
+    left: 70px;
 }
 #logo:hover{
     transform:translateY(-10%);
@@ -24,7 +27,7 @@
 }
 #navbarNav ul li a {
     color: white;
-    margin-right: 50px;
+    margin-right: 100px;
 }
 
 .btn-green{

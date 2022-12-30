@@ -9,21 +9,6 @@ body{
   overflow-x: hidden;
 }
 
-
-.bg-verde{
-    background-color: #00A86B; 
-}
-
-.fondo-img{
-    width: 100px;
-    height: 50px;
-}
-
-#navbarNav ul li a {
-    color: white;
-    margin-right: 200px;
-}
-
 .container{
   margin-top: 2rem;
   margin-bottom: 2rem;
