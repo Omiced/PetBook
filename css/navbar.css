@@ -60,3 +60,7 @@ li{
     margin-bottom: 2rem;
   }
   
+.dropdown-menu{
+    width: 30px;
+    text-align: center;
+}
