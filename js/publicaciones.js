@@ -42,4 +42,11 @@ addItem({'name':'Pose',
     'img':'https://imagenes.planb.mx/uploads/2022/05/la_jungla_-_social_299733479_73843953_1706x1280-768x576.jpg',
     'description':'Siempre es un buen momento para posar y ser admirado'});
     
+    addItem({'name':'aqui con el solovino',
+    'img':'https://scontent.fmex28-1.fna.fbcdn.net/v/t39.30808-6/308594611_177194494829074_1341185002340635843_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=njBPsfNvUw8AX8jsG_w&_nc_ht=scontent.fmex28-1.fna&oh=00_AfDlJ4M8QRJPjQk6GXSpT1NfcwMPwThHRsnJzCDGdxpEcA&oe=63B788BC',
+    'description':'mas que mi amigo eres mi brother'})
+
+addItem({'name':'ya se la saben',
+    'img':'https://i.pinimg.com/236x/2f/36/86/2f36863ace484e30b40aa9e58b562897.jpg',
+    'description':'camara hijos de su canina madre, croquetas y collares primero'});
     });
