@@ -24,4 +24,19 @@ addItem({'name':'Unos pedillos',
 
 addItem({'name':'chems',
     'img':'https://www.fotosdememes.com/wp-content/uploads/2021/09/no-puede-ser-1024x597.jpg',
-    'description':'Chems es mi favorito, me recuerda que cualquier momento puede ser memeable'})})
+    'description':'Chems es mi favorito, me recuerda que cualquier momento puede ser memeable'})
+
+addItem({'name':'Día en la playa',
+    'img':'https://soyunperro.com/wp-content/uploads/2019/07/perros-con-su-due%C3%B1a-en-la-playa.jpg',
+    'description':'Hoy me fui a Acapulco con Miranda y Toby. Nos divertimos mucho nadando y atrapando la pelota'})
+
+addItem({'name':'Hace frijol',
+    'img':'https://www.championcat.cl/wp-content/uploads/2019/09/1-gato-invierno.jpg',
+    'description':'Estamos a 2° grados aquí en el pueblo. Lo bueno que Karla me preparó un cafecito'})
+
+
+
+
+
+
+});
