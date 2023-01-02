@@ -2,8 +2,7 @@ let btnAgregar = document.getElementById("btnAgregar");
 
 
 
-btnAgregar.addEventListener("click", function(event){
-event.preventDefault();
+
 function addItem(item){
     const itemHTML = '<div class="card" style="width: 18rem;">\n' +
         '    <img src="'+item.img +'" class="card-img-top" alt="image">\n' +
@@ -17,7 +16,8 @@ function addItem(item){
     const itemsContainer = document.getElementById("body");
     itemsContainer.innerHTML += itemHTML;
 }
-
+btnAgregar.addEventListener("click", function(event){
+    event.preventDefault();
 addItem({'name':'Unos pedillos',
     'img':'https://lasillarotarm.blob.core.windows.net.optimalcdn.com/images/2022/07/21/5fqkncookngyviukyrmlslzmoy-e7877137-focus-0.01-0.24-640-384.jpg',
     'description':'El perrito viral que nos hace recordar que la vida no siempre es tan feli'});
@@ -32,11 +32,7 @@ addItem({'name':'Día en la playa',
 
 addItem({'name':'Hace frijol',
     'img':'https://www.championcat.cl/wp-content/uploads/2019/09/1-gato-invierno.jpg',
-    'description':'Estamos a 2° grados aquí en el pueblo. Lo bueno que Karla me preparó un cafecito'})
-
-
-
-
-
-
-});
+    'description':'Estamos a 2° grados aquí en el pueblo. Lo bueno que Karla me preparó un cafecito'});
+    
+    
+    });
