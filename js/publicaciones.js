@@ -32,7 +32,14 @@ addItem({'name':'Día en la playa',
 
 addItem({'name':'Hace frijol',
     'img':'https://www.championcat.cl/wp-content/uploads/2019/09/1-gato-invierno.jpg',
-    'description':'Estamos a 2° grados aquí en el pueblo. Lo bueno que Karla me preparó un cafecito'});
-    
+    'description':'Estamos a 2° grados aquí en el pueblo. Lo bueno que Karla me preparó un cafecito'}); 
+
+addItem({'name':'Caes mal',
+    'img':'https://planb.mx/wp-content/uploads/2022/05/nAaUSaJA_400x400.jpg',
+    'description':'Perrito que nos hace recordar que siempre puede existir alguien imprudente'});
+
+addItem({'name':'Pose',
+    'img':'https://imagenes.planb.mx/uploads/2022/05/la_jungla_-_social_299733479_73843953_1706x1280-768x576.jpg',
+    'description':'Siempre es un buen momento para posar y ser admirado'});
     
     });
