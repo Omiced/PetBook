@@ -49,4 +49,12 @@ addItem({'name':'Pose',
 addItem({'name':'ya se la saben',
     'img':'https://i.pinimg.com/236x/2f/36/86/2f36863ace484e30b40aa9e58b562897.jpg',
     'description':'camara hijos de su canina madre, croquetas y collares primero'});
-    });
+
+addItem({'name':'Moda Canina',
+    'img':'https://www.zotal.com/wp-content/uploads/2020/07/perrosfamososig7.png',
+    'description':'Estaré subiendo actualizaciones de moda para perritos.'});
+
+addItem({'name':'Heroes perrunos',
+    'img':'https://www.elsoldedurango.com.mx/doble-via/sueqc9-frida-la-perrita.jpg/ALTERNATES/LANDSCAPE_768/Frida%20la%20perrita.jpg',
+    'description':'Nunca es tardé para recordar a los perritos que son heroes.'}); 
+});
