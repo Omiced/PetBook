@@ -66,19 +66,32 @@
           </div>
         </nav>
       </div>
-      
-      <form action="" class ="container-fluid w-50">
+
+      <form action="" class="container-fluid w-50">
         <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Cuéntanos sobre ti!</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="txtNombre" placeholder="Copito">
+                <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
         </div>
+
+
         <div class="mb-3">
-          <label for="formFileMultiple" class="form-label">Sube una foto!</label>
-          <input class="form-control" type="file" id="formFileMultiple" multiple>
+            <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+            <textarea class="form-control" id="txtDescripcion" rows="3" placeholder="El mensaje debe contener máximo 150 caracteres"></textarea>
+            <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
         </div>
-        <button type="button" class="btn btn-success">Enviar</button>
-      </form>
-  
+
+        <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Sube una foto!</label>
+            <input class="form-control" type="file" id="inputImg" multiple>
+            <!-- <input class="form-control" type="file" id="formFileMultiple" multiple> -->
+        </div>
+<div class="col-md-8 order-md-1">
+              <div class="alert alert-danger fade show" style="display:none" role="alert" id="alertaValidaciones">
+                <p id="alertaValidacionesTexto"></p>
+          </div>
+        <button type="button" class="btn btn-success" id="btnEnviar">Enviar</button>
+    </form>
 
       
 
