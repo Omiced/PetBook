@@ -79,6 +79,8 @@
      input.addEventListener("blur",  validarFormulario );
  });//inputs.forEach
  
+
+ //eventlistener,btnregistro
  btnRegistro.addEventListener("click", function(event){
   event.preventDefault();
 
@@ -94,4 +96,4 @@
   else{
     alert("Datos correctos Mi amora <3")
   }
- })
+ })//fin,eventlistener
