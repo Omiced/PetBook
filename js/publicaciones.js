@@ -1,12 +1,13 @@
 const btnAgregar = document.getElementById("btnAgregar");
-const itemsContainer = document.getElementById("body");
+const itemsContainer = document.getElementById("container");
 let publicaciones = [];
 
 //DOM FORMULARIO 
 let btnEnviar = document.getElementById("btnEnviar");
 let txtNombre= document.getElementById("txtNombre");
 let txtDescripcion = document.getElementById("txtDescripcion");
-let inputImg = document.getElementById("inputImg");
+//let inputImg = document.getElementById("inputImg");
+
 
 let alertaValidaciones = document.getElementById("alertaValidaciones");
 let alertaValidacionesTexto = document.getElementById("alertaValidacionesTexto");
@@ -18,6 +19,33 @@ let nombreRegex = /^[A-Z][a-zA-Z]+$/;
 
 // let nombreRegex = /(^[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)$/;
 
+const input = document.getElementById("inputImg");
+const tmpimagen = document.getElementById("tmpimagen");
+const textArea = document.getElementById("textArea");
+const convertBase64 = (file) => {
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+
+    fileReader.onload = () => {
+      resolve(fileReader.result);
+    };
+
+    fileReader.onerror = (error) => {
+      reject(error);
+    };
+  });
+};
+const uploadImage = async (event) => {
+  const file = event.target.files[0];
+  const base64 = await convertBase64(file);
+  tmpimagen.src = base64;
+  textArea.innerText = base64;
+};
+
+input.addEventListener("change", (e) => {
+  uploadImage(e);
+});
 
 btnEnviar.addEventListener("click", function (event) {
   event.preventDefault();
@@ -36,6 +64,8 @@ btnEnviar.addEventListener("click", function (event) {
     txtNombre.style.border = "solid red 5px";
     alertaValidaciones.style.display = "block";
     alertaValidaciones.innerHTML += `<li>El nombre debe contener más de dos carácteres</li>`;
+    
+    
   } else {
     txtNombre.style.border = "solid green 5px";
     // alertaValidaciones.style.display = "none";
@@ -51,6 +81,7 @@ btnEnviar.addEventListener("click", function (event) {
   } else {
     txtDescripcion.style.border = "solid green 5px";
     validos++;
+    
   }
 
   if (txtDescripcion.value.length === 0){
@@ -77,6 +108,10 @@ btnEnviar.addEventListener("click", function (event) {
   // if (!nombre) return;
   // if (!mensaje1) return;
   // enviarcorreo(nombre, mensaje1);
+  addItem(urlImg, txtNombre.value, txtDescripcion.value);
+    setLocal(publicaciones);
+    renderItem(publicaciones);
+ 
 });
 
 // function enviarcorreo(nombre, numero, correo, mensaje1) {
@@ -105,6 +140,7 @@ function setLocal(arr) {
   window.localStorage.setItem("publicaciones", JSON.stringify(arr));
 }
 function renderItem(items) {
+  itemsContainer.innerHTML = ""; 
   publicaciones.forEach((item) =>
     itemsContainer.insertAdjacentHTML(
       "beforeend",
@@ -126,11 +162,28 @@ function renderItem(items) {
     )
   );
 }
-btnAgregar.addEventListener("click", function (event) {
+
+function obtenerLocalStorage(){
+let publicacion = localStorage.getItem("publicaciones")
+if (!publicacion) return;
+  publicaciones = JSON.parse(publicacion);
+  console.log(publicaciones);
+}
+  obtenerLocalStorage();
+  window.addEventListener("load", () =>{
+    obtenerLocalStorage();
+    renderItem(publicaciones);
+  }) 
+
+
+
+
+
+/* btnAgregar.addEventListener("click", function (event) {
   event.preventDefault();
   addItem("urlPrueba", "nombre", "description jajaja");
   setLocal(publicaciones);
-  renderItem(publicaciones);
+  renderItem(publicaciones); */
 
   // addItem({
   //   name: "chems",
@@ -202,4 +255,4 @@ btnAgregar.addEventListener("click", function (event) {
   //   description:
   //     "Nunca es tardé para recordar a los perritos que son heroes y heroinas.",
   // });
-});
+//});
