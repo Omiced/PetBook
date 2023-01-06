@@ -1,6 +1,7 @@
 
  const formulario = document.getElementById("formularioIndex");
  const inputs = document.querySelectorAll("#formularioIndex input");
+ const btnRegistro = document.getElementById("btnRegistro");
  
  const expresiones ={
  nombreRegex:  /^[a-zA-Z0-9À-ÿ\s]{1,40}$/,
@@ -78,4 +79,19 @@
      input.addEventListener("blur",  validarFormulario );
  });//inputs.forEach
  
- 
+ btnRegistro.addEventListener("click", function(event){
+  event.preventDefault();
+
+  const nombre = inputNombre.value;
+  const email = inputEmail.value;
+  const password = inputPassword.value;
+  const password2 = inputPassword2.value;
+  if (!nombre) return alert("datos no validos");
+  if (!email) return alert("datos no validos");
+  if (!password) return alert ("datos no validos");
+  if (!password2) return alert ("datos no validos");
+
+  else{
+    alert("Datos correctos Mi amora <3")
+  }
+ })
