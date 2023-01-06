@@ -2,15 +2,16 @@ const btnAgregar = document.getElementById("btnAgregar");
 const itemsContainer = document.getElementById("container");
 let publicaciones = [];
 
-//DOM FORMULARIO 
+//DOM FORMULARIO
 let btnEnviar = document.getElementById("btnEnviar");
-let txtNombre= document.getElementById("txtNombre");
+let txtNombre = document.getElementById("txtNombre");
 let txtDescripcion = document.getElementById("txtDescripcion");
 //let inputImg = document.getElementById("inputImg");
-
-
+let base64Img = "";
 let alertaValidaciones = document.getElementById("alertaValidaciones");
-let alertaValidacionesTexto = document.getElementById("alertaValidacionesTexto");
+let alertaValidacionesTexto = document.getElementById(
+  "alertaValidacionesTexto"
+);
 
 let idTimeout;
 
@@ -38,9 +39,8 @@ const convertBase64 = (file) => {
 };
 const uploadImage = async (event) => {
   const file = event.target.files[0];
-  const base64 = await convertBase64(file);
-  tmpimagen.src = base64;
-  textArea.innerText = base64;
+  base64Img = await convertBase64(file);
+  tmpimagen.src = base64Img;
 };
 
 input.addEventListener("change", (e) => {
@@ -64,8 +64,6 @@ btnEnviar.addEventListener("click", function (event) {
     txtNombre.style.border = "solid red 5px";
     alertaValidaciones.style.display = "block";
     alertaValidaciones.innerHTML += `<li>El nombre debe contener más de dos carácteres</li>`;
-    
-    
   } else {
     txtNombre.style.border = "solid green 5px";
     // alertaValidaciones.style.display = "none";
@@ -81,16 +79,13 @@ btnEnviar.addEventListener("click", function (event) {
   } else {
     txtDescripcion.style.border = "solid green 5px";
     validos++;
-    
   }
 
-  if (txtDescripcion.value.length === 0){
+  if (txtDescripcion.value.length === 0) {
     alertaValidaciones.style.display = "block";
     alertaValidaciones.innerHTML += `<li>El mensaje no puede estar vacio</li>`;
     txtDescripcion.style.border = "solid red 5px";
-}
-
-
+  }
 
   if (idTimeout != undefined && idTimeout != null) {
     clearTimeout(idTimeout);
@@ -108,10 +103,9 @@ btnEnviar.addEventListener("click", function (event) {
   // if (!nombre) return;
   // if (!mensaje1) return;
   // enviarcorreo(nombre, mensaje1);
-  addItem(urlImg, txtNombre.value, txtDescripcion.value);
-    setLocal(publicaciones);
-    renderItem(publicaciones);
- 
+  addItem(base64Img, txtNombre.value, txtDescripcion.value);
+  setLocal(publicaciones);
+  renderItem(publicaciones);
 });
 
 // function enviarcorreo(nombre, numero, correo, mensaje1) {
@@ -126,7 +120,6 @@ btnEnviar.addEventListener("click", function (event) {
 //   }).then((message) => alert(message));
 // }//btnenviar
 
-
 function addItem(urlImg, name, description) {
   publicaciones.push({
     img: urlImg,
@@ -140,7 +133,7 @@ function setLocal(arr) {
   window.localStorage.setItem("publicaciones", JSON.stringify(arr));
 }
 function renderItem(items) {
-  itemsContainer.innerHTML = ""; 
+  itemsContainer.innerHTML = "";
   publicaciones.forEach((item) =>
     itemsContainer.insertAdjacentHTML(
       "beforeend",
@@ -163,96 +156,14 @@ function renderItem(items) {
   );
 }
 
-function obtenerLocalStorage(){
-let publicacion = localStorage.getItem("publicaciones")
-if (!publicacion) return;
+function obtenerLocalStorage() {
+  let publicacion = localStorage.getItem("publicaciones");
+  if (!publicacion) return;
   publicaciones = JSON.parse(publicacion);
   console.log(publicaciones);
 }
+
+window.addEventListener("load", () => {
   obtenerLocalStorage();
-  window.addEventListener("load", () =>{
-    obtenerLocalStorage();
-    renderItem(publicaciones);
-  }) 
-
-
-
-
-
-/* btnAgregar.addEventListener("click", function (event) {
-  event.preventDefault();
-  addItem("urlPrueba", "nombre", "description jajaja");
-  setLocal(publicaciones);
-  renderItem(publicaciones); */
-
-  // addItem({
-  //   name: "chems",
-  //   img: "https://www.fotosdememes.com/wp-content/uploads/2021/09/no-puede-ser-1024x597.jpg",
-  //   description:
-  //     "Chems es mi favorito, me recuerda que cualquier momento puede ser memeable",
-  // });
-
-  // addItem({
-  //   name: "Día en la playa",
-  //   img: "https://soyunperro.com/wp-content/uploads/2019/07/perros-con-su-due%C3%B1a-en-la-playa.jpg",
-  //   description:
-  //     "Hoy me fui a Acapulco con Miranda y Toby. Nos divertimos mucho nadando y atrapando la pelota",
-  // });
-
-  // addItem({
-  //   name: "Hace frijol",
-  //   img: "https://www.championcat.cl/wp-content/uploads/2019/09/1-gato-invierno.jpg",
-  //   description:
-  //     "Estamos a 2° grados aquí en el pueblo. Lo bueno que Karla me preparó un cafecito",
-  // });
-
-  // addItem({
-  //   name: "Caes mal",
-  //   img: "https://planb.mx/wp-content/uploads/2022/05/nAaUSaJA_400x400.jpg",
-  //   description:
-  //     "Perrito que nos hace recordar que siempre puede existir alguien imprudente",
-  // });
-
-  // addItem({
-  //   name: "Pose",
-  //   img: "https://imagenes.planb.mx/uploads/2022/05/la_jungla_-_social_299733479_73843953_1706x1280-768x576.jpg",
-  //   description: "Siempre es un buen momento para posar y ser admirado",
-  // });
-
-  // addItem({
-  //   name: "aqui con el solovino",
-  //   img: "https://scontent.fmex28-1.fna.fbcdn.net/v/t39.30808-6/308594611_177194494829074_1341185002340635843_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=njBPsfNvUw8AX8jsG_w&_nc_ht=scontent.fmex28-1.fna&oh=00_AfDlJ4M8QRJPjQk6GXSpT1NfcwMPwThHRsnJzCDGdxpEcA&oe=63B788BC",
-  //   description: "mas que mi amigo eres mi brother",
-  // });
-
-  // addItem({
-  //   name: "ya se la saben",
-  //   img: "https://i.pinimg.com/236x/2f/36/86/2f36863ace484e30b40aa9e58b562897.jpg",
-  //   description:
-  //     "camara hijos de su canina madre, croquetas y collares primero",
-  // });
-
-  // addItem({
-  //   name: "Moda Canina",
-  //   img: "https://www.zotal.com/wp-content/uploads/2020/07/perrosfamososig7.png",
-  //   description: "Estaré subiendo actualizaciones de moda para perritos.",
-  // });
-
-  // addItem({
-  //   name: "Heroes perrunos",
-  //   img: "https://www.elsoldedurango.com.mx/doble-via/sueqc9-frida-la-perrita.jpg/ALTERNATES/LANDSCAPE_768/Frida%20la%20perrita.jpg",
-  //   description: "Nunca es tardé para recordar a los perritos que son heroes.",
-  // });
-  // addItem({
-  //   name: "Heroes perrunos 2",
-  //   img: "https://www.elsoldedurango.com.mx/doble-via/sueqc9-frida-la-perrita.jpg/ALTERNATES/LANDSCAPE_768/Frida%20la%20perrita.jpg",
-  //   description:
-  //     "Nunca es tardé para recordar a los perritos que son heroes y heroinas.",
-  // });
-  // addItem({
-  //   name: "Heroes perrunos 3",
-  //   img: "https://www.elsoldedurango.com.mx/doble-via/sueqc9-frida-la-perrita.jpg/ALTERNATES/LANDSCAPE_768/Frida%20la%20perrita.jpg",
-  //   description:
-  //     "Nunca es tardé para recordar a los perritos que son heroes y heroinas.",
-  // });
-//});
+  renderItem(publicaciones);
+});
