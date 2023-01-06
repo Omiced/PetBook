@@ -3,13 +3,14 @@
  const inputs = document.querySelectorAll("#formularioIndex input");
  const btnRegistro = document.getElementById("btnRegistro");
  
+ 
  const expresiones ={
  nombreRegex:  /^[a-zA-Z0-9À-ÿ\s]{1,40}$/,
  passwordRegex: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
  emailRegex: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
  }
  
- 
+ //Funcion.Validar.Formulario - INICIA
  const validarFormulario = (e) => {
    switch(e.target.name){
      case "inputNombre":
@@ -70,18 +71,18 @@
         }
        break;
    }//switchid
- }//validarFormulario
+ }//Funcion.validar.Formulario - TERMINA
  
  
- 
+ //Foreach.Inputs.Formulario - INICIA
  inputs.forEach((input) => {
      input.addEventListener("keyup", validarFormulario );
      input.addEventListener("blur",  validarFormulario );
- });//inputs.forEach
+ });//ForEach.Inputs.Formulario - TERMINA
  
 
- //eventlistener,btnregistro
- btnRegistro.addEventListener("click", function(event){
+ //Event.listener.btnRegistro - INICIA
+  btnRegistro.addEventListener("click", function(event){
   event.preventDefault();
 
   const nombre = inputNombre.value;
@@ -96,4 +97,4 @@
   else{
     alert("Datos correctos Mi amora <3")
   }
- })//fin,eventlistener
+ })//Event.Listener.btnRegistro - TERMINA
