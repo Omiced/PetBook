@@ -10,7 +10,7 @@ let mensajeEl = document.getElementById("exampleFormControlTextarea1");
 
 let idTimeout;
 
-// let nombreRegex = /^[A-Z][a-zA-Z]+$/;
+// let nombreRegex1 = /^[A-Z][a-zA-Z]+$/;
 let nombreRegex = /(^[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)$/;
 let numeroRegex = /^[0-9]{10}$/;
 let emailRegex =

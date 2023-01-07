@@ -15,10 +15,13 @@ let alertaValidacionesTexto = document.getElementById(
 
 let idTimeout;
 
-//REGEX nombre
-let nombreRegex = /^[A-Z][a-zA-Z]+$/;
 
-// let nombreRegex = /(^[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)$/;
+//REGEX nombre
+//Este REGEX ya incluye el mínimo de caracteres 2 y el máximo es indeterminado
+let nombreRegex = /^[a-zA-Z0-9 ]{2,}$/; 
+let descriptionRegex = /^[a-zA-Z0-9A-ZÁÉÍÓÚ a-zñáéíóú]{10,}$/;
+// let descriptionRegex = /^[.]{10,}$/;
+
 
 const input = document.getElementById("inputImg");
 const tmpimagen = document.getElementById("tmpimagen");
@@ -47,32 +50,43 @@ input.addEventListener("change", (e) => {
   uploadImage(e);
 });
 
+
 btnEnviar.addEventListener("click", function (event) {
   event.preventDefault();
   let validos = 0;
-  alertaValidaciones.innerHTML = "";
+  alertaValidaciones.innerHTML = ""; //separacion entre los alerts y las cards
   if (
-    txtNombre.value.match(nombreRegex) != null &&
-    txtDescripcion.value.length < 150
+    (txtNombre.value.match(nombreRegex)) != null && (txtDescripcion.value.match(descriptionRegex) != null)
   ) {
     alertaValidaciones.style.display = "none";
   }
 
   //LISTO NOMBRE
-  txtNombre.value = txtNombre.value.trim();
+  txtNombre.value = txtNombre.value.trim().replaceAll("  ", "");
+  console.log(txtNombre.value);
   if (txtNombre.value.match(nombreRegex) == null) {
     txtNombre.style.border = "solid red 5px";
     alertaValidaciones.style.display = "block";
-    alertaValidaciones.innerHTML += `<li>El nombre debe contener más de dos carácteres</li>`;
-  } else {
+    alertaValidaciones.innerHTML += `<li>El nombre debe contener más de dos carácteres y no puede contener números</li>`;
+  }else {
     txtNombre.style.border = "solid green 5px";
-    // alertaValidaciones.style.display = "none";
     validos++;
   }
 
   // LISTO MENSAJE
-  txtDescripcion.value.trim().replaceAll("  ", "");
-  if (txtDescripcion.value.length < 10) {
+  txtDescripcion.value = txtDescripcion.value.trim().replaceAll("  ", "");
+  console.log(txtDescripcion.value.length + " esta es la longitud");
+  // console.log(txtDescripcion.value.match(descriptionRegex));
+
+  // descriptionSinEspacios = txtDescripcion.value.trim().replaceAll("  ", "");
+
+  if (txtDescripcion.value.length === 0) {
+    alertaValidaciones.style.display = "block";
+    alertaValidaciones.innerHTML += `<li>El mensaje no puede estar vacio</li>`;
+    txtDescripcion.style.border = "solid red 5px";
+  }
+
+  if (txtDescripcion.value.match(descriptionRegex) == null) {
     alertaValidaciones.style.display = "block";
     alertaValidaciones.innerHTML += `<li>El mensaje debe contener 10 carácteres como mínimo</li>`;
     txtDescripcion.style.border = "solid red 5px";
@@ -81,11 +95,7 @@ btnEnviar.addEventListener("click", function (event) {
     validos++;
   }
 
-  if (txtDescripcion.value.length === 0) {
-    alertaValidaciones.style.display = "block";
-    alertaValidaciones.innerHTML += `<li>El mensaje no puede estar vacio</li>`;
-    txtDescripcion.style.border = "solid red 5px";
-  }
+
 
   if (idTimeout != undefined && idTimeout != null) {
     clearTimeout(idTimeout);
@@ -95,6 +105,7 @@ btnEnviar.addEventListener("click", function (event) {
     idTimeout = setTimeout(function () {
       txtNombre.style.border = "";
       txtDescripcion.style.border = "";
+      alertaValidaciones.style.display = none;
     }, 2000);
   } //==4
 
@@ -107,6 +118,7 @@ btnEnviar.addEventListener("click", function (event) {
   setLocal(publicaciones);
   renderItem(publicaciones);
 });
+
 
 // function enviarcorreo(nombre, numero, correo, mensaje1) {
 //   Email.send({
