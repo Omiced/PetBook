@@ -103,8 +103,17 @@
                         <li>El nombre solo puede contener letras, numeros.</li>
                         </div>
                       </div>
+                      <div class="formularioGrupo">
+                        <label for="input-num" class="form-label">Número de Teléfono</label>
+                        <input type="tel" class="form-control bg-green2" id="numeroTel" placeholder="55 50 10 10 10"  name="telefono" />
+                          <div class="alert alert-danger" role="error">
+                            <li>Ingresa un telefono válido</li>
+                            <li>Ejemplo: 5567996337</li>
+                        </div>
+                    </div>
+                        
                   <!--Especie-->
-                  <div class="mb-3">
+                  <div class="formularioGrupo">
                       <label for="input-name" class="form-label">Especie de tu mascota</label>
                       <div>
                         <select name="Especie"  class ="especie" name="especie" id="especie">
@@ -119,8 +128,12 @@
                         </select>
                     </div>  
                   </div>
+                </div>
+               
+                  
+
                   <!--Email-->
-                  <div class="formularioGrupo" id="grupoEmail">
+                <div class="formularioGrupo" id="grupoEmail">
                       <label for="input-email" class="form-label">Email del dueño</label>
                       <input type="email" class="form-control bg-green2" name="inputEmail" id="inputEmail"
                       placeholder="name@example.com" />
@@ -128,10 +141,10 @@
                           <li>Ingresa un email válido</li>
                           <li>Ejemplo: gatitaflow@gmail.com</li>
                       </div>
-                  </div>
+                </div>
                  
                   <!--contraseña-->
-                  <div class="formularioGrupo" id="grupoPassword">
+                <div class="formularioGrupo" id="grupoPassword">
                       <label for="input-password" class="form-label">Contraseña</label>
                       <input type="password" class="form-control bg-green2" name="inputPassword" id="inputPassword" placeholder="********" />
                       <div class="alert alert-danger" role="error">
@@ -139,17 +152,17 @@
                         <li>La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.</li>
                         <li>Ejemplo: UnaGatita60$</li>
                      </div>               
-                  </div>
+                </div>
 
                   <!--repetircontraseña-->
-                  <div class="formularioGrupo" id="grupoPassword2">
+                <div class="formularioGrupo" id="grupoPassword2">
                       <label for="input-Password2" class="form-label">Repetir contraseña</label>
                       <input type="password" class="form-control bg-green2" name="inputPassword2" id="inputPassword2"
                           placeholder="********" />
                           <div class="alert alert-danger" role="error">
                             <li>La contraseña debe ser igual a la anterior</li>
                         </div>         
-                  </div>
+                </div>
                     <br>
                   <div class="col-md-8 order-md-1">
                       <button type="button" id="btnRegistro" class="btn btn-green"><a href="/Login.html" class="btn-link">Registrarme</a></button>
