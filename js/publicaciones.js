@@ -19,16 +19,15 @@ let idTimeout;
 //REGEX nombre
 //Este REGEX ya incluye el mínimo de caracteres 2 y el máximo es indeterminado
 let nombreRegex = /^[a-zA-Z0-9 ]{2,}$/; 
-let descriptionRegex = /^[a-zA-Z0-9A-ZÁÉÍÓÚ a-zñáéíóú]{10,}$/;
+let descriptionRegex = /^[a-zA-Z0-9A-ZÁÉÍÓÚ a-zñáéíóú](?:.*[@$?¡\-_]){10,}$/;
 // let descriptionRegex = /^[.]{10,}$/;
-
 
 const input = document.getElementById("inputImg");
 const tmpimagen = document.getElementById("tmpimagen");
 const textArea = document.getElementById("textArea");
 const convertBase64 = (file) => {
   return new Promise((resolve, reject) => {
-    const fileReader = new FileReader();
+    const fileReader = new FileReader()
     fileReader.readAsDataURL(file);
 
     fileReader.onload = () => {
