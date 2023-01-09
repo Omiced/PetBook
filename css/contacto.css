@@ -8,20 +8,6 @@
 body{
     overflow-x: hidden;
   }
-
-#logo:hover{
-    transform:translateY(-10%);
-    transform: scale(1.2);
-  }
-
-.bg-verde{
-    background-color: #00A86B; 
-}
-
-.btn-green{
-background-color:  #00A86B;
-}
-
 .bg-green2{
     background-color: #CCEEE1;
 }

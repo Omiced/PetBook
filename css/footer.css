@@ -1,8 +1,18 @@
 
+html{
+  height: 100vh;
+  margin: 0;
+}
+
+body{
+  height: 100%;
+}
+
 footer{
   background-color: #000;
   color: #d9ece4;
   margin-bottom: 0;
+  padding: 9px 0;
 }
 
 footer .nav-link{
@@ -16,6 +26,7 @@ footer  .nav-link:hover{
 footer p {
   font-size: 16px;
   font-weight: normal;
+  margin-bottom: 0;
 }
 
 .nav-item{

@@ -1,33 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
-
-.caja-font{
-    font-family: 'Laila', sans-serif;
-    
+.navbar{
+    padding: 0 20px !important;
 }
 
 .navLogo{
-    width: 90px;
-    height: 90px;
-    position: absolute;
-    top: -18px;
-    left: 70px;
+    width: 20%;
 }
 #logo:hover{
-    transform:translateY(-10%);
-    transform: scale(1.2);
+    transform:translateY(-5%);
+    transform: scale(1.5);
   }
 
 .bg-verde{
-    background-color: #00A86B; 
+    background-color: #005C3A; 
 }
-.nav-link
-{
-    color: aliceblue;
-    
+
+.div-list{
+    justify-content: flex-end;
 }
-#navbarNav ul li a {
-    color: white;
-    margin-right: 100px;
+
+.nav-ul-s{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.nav-ul-s a{
+    color: #f0f8ff;
+    font-size: 1.125rem;
+    font-family: 'Laila', sans-serif; 
+    font-weight: 400;
 }
 
 .btn-green{
@@ -41,12 +43,6 @@ background-color:  #00A86B;
     position:relative ;
     float: right;
 }
-li{
-    margin-right: 150px;
-
-}
-
-
 
 .estilo-form{
     border-radius: 5%;
@@ -63,4 +59,5 @@ li{
 .dropdown-menu{
     width: 30px;
     text-align: center;
+   
 }
