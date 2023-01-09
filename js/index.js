@@ -5,13 +5,11 @@
  const numeroTel = document.getElementById("numeroTel");
  
  
- 
  const expresiones ={
  nombreRegex:  /^[a-zA-Z0-9À-ÿ\s]{1,40}$/,
  passwordRegex: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
  emailRegex: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
- telefonoRegex: /^{10}+$/, 
-
+ telefonoRegex: /^{10}+$/,
  }
  
  //Funcion.Validar.Formulario - INICIA
@@ -31,7 +29,6 @@
          return false
        }
      break;
-
      case "inputnumeroTel":
       if (expresiones.telefonoRegex.test(e.target.value)){
       
@@ -45,7 +42,9 @@
         document.querySelector('#grupoNombre .alert-danger').classList.add('alert-danger-activo')
         return false
       }
-    break;
+
+
+     
      case "inputEmail":
        if (expresiones.emailRegex.test(e.target.value)){
        
