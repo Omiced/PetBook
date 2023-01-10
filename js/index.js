@@ -145,6 +145,9 @@ btnRegistro.addEventListener("click", function (event) {
 function setDatos(){
   localStorage.setItem("nombreUsuario", inputNombre.value);
   localStorage.setItem("numeroTelefono", inputnumeroTel.value);
+  localStorage.setItem("email", inputEmail.value);
+  localStorage.setItem("contraseña", inputPassword.value);
+  localStorage.setItem("contraseña2", inputPassword2.value);
 
   // return nombreStore,emailStore;
 }
