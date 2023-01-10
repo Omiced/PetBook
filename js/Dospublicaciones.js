@@ -12,7 +12,7 @@ let alertaValidaciones = document.getElementById("alertaValidaciones");
 let alertaValidacionesTexto = document.getElementById(
   "alertaValidacionesTexto"
 );
-
+let imagentemp=document.getElementById("imagentemp");
 let validos = 0;
 let idTimeout;
 
@@ -121,6 +121,28 @@ btnEnviar.addEventListener("click", function (event) {
     setLocal(publicaciones);
     renderItems(publicaciones);
   }
+//    let inputFocused="";
+//  let elements = document.querySelectorAll("input[type='text'], input[type='password']");
+//  for (let i =0; i<elements.length;i++){
+//    elements[i].addEventListener("focus", function(){
+//      inputFocused = this;
+//      inputFocused.value="";
+//   });
+// }
+txtNombre.value= "";
+txtDescripcion.value="";
+input.value="";
+tmpimagen.src="";
+txtNombre.focus();
+});
+txtNombre.addEventListener("blur", function(event){
+  event.preventDefault();
+  event.target.value = event.target.value.trim();
+}
+);
+txtDescripcion.addEventListener("blur", function(event){
+  event.preventDefault();
+ event.target.value = event.target.value.trim();
 });
 
 function addItem(urlImg, name, description) {

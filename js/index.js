@@ -138,6 +138,14 @@ btnRegistro.addEventListener("click", function (event) {
 
     window.location.href = "Publicaciones.html";
   }
+  let inputFocused="";
+let elements = document.querySelectorAll("input[type='text'], input[type='password']");
+for (let i =0; i<elements.length;i++){
+  elements[i].addEventListener("focus", function(){
+    inputFocused = this;
+    inputFocused.value="";
+  });
+}
 
 })//Event.Listener.btnRegistro - TERMINA
 
