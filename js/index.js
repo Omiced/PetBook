@@ -4,7 +4,7 @@ const inputs = document.querySelectorAll("#formularioIndex input");
 const btnRegistro = document.getElementById("btnRegistro");
 // const numeroTel = document.getElementById("inputnumeroTel");
 
-
+let datosUsuario = [];
 
 
 const expresiones = {
@@ -132,22 +132,46 @@ btnRegistro.addEventListener("click", function (event) {
 
   else {
     alert("Datos correctos Mi amora <3");
-    setDatos();
+    // setDatos();
+    addItem(nombre, telefono, email, password, password2);
+    setLocal(datosUsuario);
 
     window.location.href = "Publicaciones.html";
   }
 
-
-  
 })//Event.Listener.btnRegistro - TERMINA
 
+//FUNCIONES LOCALSTORAGE
 
-function setDatos(){
-  localStorage.setItem("nombreUsuario", inputNombre.value);
-  localStorage.setItem("numeroTelefono", inputnumeroTel.value);
-  localStorage.setItem("email", inputEmail.value);
-  localStorage.setItem("contraseña", inputPassword.value);
-  localStorage.setItem("contraseña2", inputPassword2.value);
-
-  // return nombreStore,emailStore;
+function addItem(name, telephone, email, password1, password2) {
+  datosUsuario.push({
+    name: name,
+    telephone: telephone,
+    email: email,
+    password1: password1,
+    password2: password2
+  });
+  console.log(datosUsuario);
 }
+
+function setLocal(arr) {
+  window.localStorage.setItem("datosUsuario", JSON.stringify(arr));
+}
+
+
+
+// function obtenerLocalStorage() {
+//   let publicacion = localStorage.getItem("publicaciones");
+//   if (!publicacion) return;
+//   publicaciones = JSON.parse(publicacion);
+// }
+
+
+// function setDatos(){
+//   localStorage.setItem("nombreUsuario", inputNombre.value);
+//   localStorage.setItem("numeroTelefono", inputnumeroTel.value);
+//   localStorage.setItem("email", inputEmail.value);
+//   localStorage.setItem("contraseña", inputPassword.value);
+//   localStorage.setItem("contraseña2", inputPassword2.value);
+
+// }
