@@ -1,0 +1,20 @@
+.card{
+  max-width: 43.75rem;
+  width: 100%;
+  padding: 0;
+  margin: 1.25rem 0;
+  background-color: #CCEEE1;
+}
+
+.img{
+  width: 100%;
+}
+
+.card-title{
+  font-size: 1.5rem;
+}
+
+
+.row{
+  margin-bottom: 20px;
+}

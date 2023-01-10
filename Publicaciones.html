@@ -10,6 +10,7 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
   <link rel="stylesheet" href="/css/navbar.css" />
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="/css/publicaicones.css">
 </head>
 
 <body>
@@ -70,41 +71,39 @@
     </div>
   </nav>
 
-  <form action="" class="container-fluid w-50">
-    <div class="mb-3">
+  <form action="#" class="container w-75 justify-content-center">
+    <div class="row justify-content-center">
       <label for="exampleFormControlInput1" class="form-label">Nombre</label>
       <input type="text" class="form-control" id="txtNombre" placeholder="Copito">
       <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> -->
     </div>
 
 
-    <div class="mb-3">
+    <div class="row justify-content-center">
       <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
       <textarea class="form-control" id="txtDescripcion" rows="3"
         placeholder="El mensaje debe contener máximo 150 caracteres"></textarea>
       <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
     </div>
 
-    <div class="mb-3">
+    <div class="row justify-content-center">
       <label for="formFileMultiple" class="form-label">Sube una foto!</label>
       <input class="form-control" type="file" id="inputImg" multiple>
       <!-- <input class="form-control" type="file" id="formFileMultiple" multiple> -->
     </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h6>Image Previa:</h6>
-          <img class="img" id="tmpimagen" />
-        </div>
-      </div>
-    </div>
+    <div class="row"><button type="button" class="btn btn-success" id="btnEnviar">Enviar</button></div>
       <div class="alert alert-danger fade show" style="display:none" role="alert" id="alertaValidaciones">
         <p id="alertaValidacionesTexto"></p>
       </div>
-      <button type="button" class="btn btn-success" id="btnEnviar">Enviar</button>
+     
+        <div class="row">
+          <div class="col">
+            <h6>Vista Previa Imagen:</h6>
+            <img class="img" id="tmpimagen" />
+          </div>
+        </div>
   </form>
-  <main id="container" style="display: flex; flex-wrap: wrap;"> 
+  <main id="container" class="container justify-content-center w-75"> 
 
 
   </main>

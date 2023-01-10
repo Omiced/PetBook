@@ -9,7 +9,9 @@ let txtDescripcion = document.getElementById("txtDescripcion");
 //let inputImg = document.getElementById("inputImg");
 let base64Img = "";
 let alertaValidaciones = document.getElementById("alertaValidaciones");
-let alertaValidacionesTexto = document.getElementById("alertaValidacionesTexto");
+let alertaValidacionesTexto = document.getElementById(
+  "alertaValidacionesTexto"
+);
 
 let validos = 0;
 let idTimeout;
@@ -19,161 +21,162 @@ let idTimeout;
 let nombreRegex = /^[a-zA-Z ]{2,}$/;
 
 //Este REGEX ya incluye el mínimo de caracteres 10 y el máximo es indeterminado
-let descriptionRegex = /^[a-zA-Z0-9A-ZÁÉÍÓÚ a-zñáéíóú(?¿:.*[@$¡!^\-_)]{10,}$/;//No acepta corchetes []
-
+let descriptionRegex = /^[a-zA-Z0-9A-ZÁÉÍÓÚ a-zñáéíóú(?¿:.*[@$¡!^\-_)]{10,}$/; //No acepta corchetes []
 
 const input = document.getElementById("inputImg");
 const tmpimagen = document.getElementById("tmpimagen");
 const textArea = document.getElementById("textArea");
 const convertBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-        const fileReader = new FileReader();
-        fileReader.readAsDataURL(file);
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
 
-        fileReader.onload = () => {
-            resolve(fileReader.result);
-        };
+    fileReader.onload = () => {
+      resolve(fileReader.result);
+    };
 
-        fileReader.onerror = (error) => {
-            reject(error);
-        };
-    });
+    fileReader.onerror = (error) => {
+      reject(error);
+    };
+  });
 };
 const uploadImage = async (event) => {
-    const file = event.target.files[0];
-    base64Img = await convertBase64(file);
-    tmpimagen.src = base64Img;
+  const file = event.target.files[0];
+  base64Img = await convertBase64(file);
+  tmpimagen.src = base64Img;
 };
 
 input.addEventListener("change", (e) => {
-    uploadImage(e);
+  uploadImage(e);
 });
 
+function validarNombre() {
+  //LISTO NOMBRE
+  txtNombre.value = txtNombre.value.trim().replaceAll("  ", "");
+  if (txtNombre.value.match(nombreRegex) == null) {
+    txtNombre.style.border = "solid red 5px";
+    alertaValidaciones.style.display = "block";
+    alertaValidaciones.innerHTML += `<li>El nombre debe contener más de dos carácteres y no puede contener números</li>`;
+  } else {
+    txtNombre.style.border = "solid green 5px";
+    validos++;
+    return true;
+  }
+} //validarNombre
 
+function validarDescripcion() {
+  // LISTO MENSAJE
+  txtDescripcion.value = txtDescripcion.value.trim().replaceAll("  ", "");
 
-function validarNombre(){
-    //LISTO NOMBRE
-    txtNombre.value = txtNombre.value.trim().replaceAll("  ", "");
-    if (txtNombre.value.match(nombreRegex) == null) {
-        txtNombre.style.border = "solid red 5px";
-        alertaValidaciones.style.display = "block";
-        alertaValidaciones.innerHTML += `<li>El nombre debe contener más de dos carácteres y no puede contener números</li>`;
-    } else {
-        txtNombre.style.border = "solid green 5px";
-        validos++;
-        return true;
+  if (txtDescripcion.value.length === 0) {
+    alertaValidaciones.style.display = "block";
+    alertaValidaciones.innerHTML += `<li>El mensaje no puede estar vacio</li>`;
+    txtDescripcion.style.border = "solid red 5px";
+  }
+
+  if (txtDescripcion.value.match(descriptionRegex) == null) {
+    alertaValidaciones.style.display = "block";
+    alertaValidaciones.innerHTML += `<li>El mensaje debe contener 10 carácteres como mínimo</li>`;
+    txtDescripcion.style.border = "solid red 5px";
+  } else {
+    txtDescripcion.style.border = "solid green 5px";
+    validos++;
+    return true;
+  }
+} //validarDescripcion
+
+function quitarAlertas() {
+  if (
+    txtNombre.value.match(nombreRegex) != null &&
+    txtDescripcion.value.match(descriptionRegex) != null
+  ) {
+    alertaValidaciones.style.display = "none";
+  }
 }
 
-}//validarNombre
+function temporizador() {
+  if (idTimeout != undefined && idTimeout != null) {
+    clearTimeout(idTimeout);
+  }
 
-function validarDescripcion(){
-    // LISTO MENSAJE
-    txtDescripcion.value = txtDescripcion.value.trim().replaceAll("  ", "");
-
-    if (txtDescripcion.value.length === 0) {
-        alertaValidaciones.style.display = "block";
-        alertaValidaciones.innerHTML += `<li>El mensaje no puede estar vacio</li>`;
-        txtDescripcion.style.border = "solid red 5px";
-    }
-
-    if (txtDescripcion.value.match(descriptionRegex) == null) {
-        alertaValidaciones.style.display = "block";
-        alertaValidaciones.innerHTML += `<li>El mensaje debe contener 10 carácteres como mínimo</li>`;
-        txtDescripcion.style.border = "solid red 5px";
-
-    } else {
-        txtDescripcion.style.border = "solid green 5px";
-        validos++;
-        return true;
-    }
-}//validarDescripcion
-
-
-function quitarAlertas(){
-    if (
-        (txtNombre.value.match(nombreRegex)) != null && (txtDescripcion.value.match(descriptionRegex) != null)
-    ) {
-        alertaValidaciones.style.display = "none";
-    }
-}
-
-function temporizador(){
-    if (idTimeout != undefined && idTimeout != null) {
-        clearTimeout(idTimeout);
-    }
-
-    if (validos == 2) {
-        idTimeout = setTimeout(function () {
-            txtNombre.style.border = "";
-            txtDescripcion.style.border = "";
-            alertaValidaciones.style.display = none;
-        }, 2000);
-    } //==4
+  if (validos == 2) {
+    idTimeout = setTimeout(function () {
+      txtNombre.style.border = "";
+      txtDescripcion.style.border = "";
+      alertaValidaciones.style.display = "none";
+    }, 2000);
+  } //==4
 }
 
 //EVENTO===============================================================================
 btnEnviar.addEventListener("click", function (event) {
-    event.preventDefault();
-    alertaValidaciones.innerHTML = ""; //separacion entre los alerts y las cards
+  event.preventDefault();
+  alertaValidaciones.innerHTML = ""; //separacion entre los alerts y las cards
 
-    if(validarNombre() == true && validarDescripcion() == true){
-        quitarAlertas();
-        temporizador();
+  if (validarNombre() == true && validarDescripcion() == true) {
+    quitarAlertas();
+    temporizador();
 
-
-        addItem(base64Img, txtNombre.value, txtDescripcion.value);
-        setLocal(publicaciones);
-        renderItem(publicaciones);
-    }
-
+    addItem(base64Img, txtNombre.value, txtDescripcion.value);
+    setLocal(publicaciones);
+    renderItems(publicaciones);
+  }
 });
 
-
 function addItem(urlImg, name, description) {
-    publicaciones.push({
-        img: urlImg,
-        name: name,
-        description: description,
-    });
-    console.log(publicaciones);
+  publicaciones.push({
+    img: urlImg,
+    name: name,
+    description: description,
+  });
+  console.log(publicaciones);
 }
 
 function setLocal(arr) {
-    window.localStorage.setItem("publicaciones", JSON.stringify(arr));
+  window.localStorage.setItem("publicaciones", JSON.stringify(arr));
 }
-function renderItem(items) {
-    itemsContainer.innerHTML = "";
-    publicaciones.forEach((item) =>
-        itemsContainer.insertAdjacentHTML(
-            "beforeend",
-            '<div class="card" style="width: 18rem;">\n' +
-            '    <img src="' +
-            item.img +
-            '" class="card-img-top" alt="image">\n' +
-            '    <div class="card-body">\n' +
-            '        <h5 class="card-title">' +
-            item.name +
-            "</h5>\n" +
-            '        <p class="card-text">' +
-            item.description +
-            "</p>\n" +
-            '        <a href="#" class="btn btn-primary">Me gusta</a>\n' +
-            "    </div>\n" +
-            "</div>\n" +
-            "<br/>"
-        )
-    );
+
+function renderItems(items) {
+  itemsContainer.innerHTML = "";
+
+  publicaciones.forEach((item) =>
+    itemsContainer.insertAdjacentHTML("beforeend", chooseRender(item))
+  );
+}
+
+function chooseRender(item) {
+  const markupImg = `
+  <div class="row justify-content-center">
+    <div class="card card-img" >
+      <img src="${item.img}" class="card-img-top img" alt="${item.description}">
+      <div class="card-body">
+        <h5 class="card-title text-center">${item.name}</h5>
+        <p class="card-text ">${item.description}</p>
+      </div>
+    </div>
+    </div>
+    `;
+
+  const markupText = `
+  <div class="row justify-content-center">
+    <div class="card card-text" >
+      <div class="card-body">
+        <h5 class="card-title text-center">${item.name}</h5>
+        <p class="card-text ">${item.description}</p>
+      </div>
+    </div>
+    </div>
+    `;
+  return item.img ? markupImg : markupText;
 }
 
 function obtenerLocalStorage() {
-    let publicacion = localStorage.getItem("publicaciones");
-    if (!publicacion) return;
-    publicaciones = JSON.parse(publicacion);
-    console.log(publicaciones);
+  let publicacion = localStorage.getItem("publicaciones");
+  if (!publicacion) return;
+  publicaciones = JSON.parse(publicacion);
 }
 
 window.addEventListener("load", () => {
-    obtenerLocalStorage();
-    renderItem(publicaciones);
+  obtenerLocalStorage();
+  renderItems(publicaciones);
 });
-
