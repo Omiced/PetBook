@@ -35,3 +35,11 @@ p{
 .alert-danger-activo{
     display: block;
 }
+
+.btn-green{
+    background-color:  #00A86B;
+    }
+    
+    .bg-green2{
+        background-color: #CCEEE1;
+    }
