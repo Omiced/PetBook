@@ -3,12 +3,19 @@
 
 
 .card{
-  max-width: 43.75rem;
+  max-width: 25.75rem;
   width: 100%;
   padding: 0;
   margin: 1.25rem 0;
   background-color: #CCEEE1;
   font-family: 'Laila', sans-serif; 
+  box-shadow: 0 1px 1px rgb(0, 0, 0);
+  cursor: default;
+  transition: all 400ms ease;
+}
+.card:hover{
+box-shadow: 5px 5px 20px rgb(0, 0, 0.45);
+transform: translateY(-3%);
 }
 
 .img{
@@ -22,4 +29,7 @@
 
 .row{
   margin-bottom: 20px;
+}
+#tmpimagen{
+  max-width: 400px;
 }
