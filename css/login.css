@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+.navbar{
+    padding: 0 20px !important;
+}
+
+.navLogo{
+    width: 20%;
+}
+#logo:hover{
+    transform:translateY(-5%);
+    transform: scale(1.5);
+  }
+
+.bg-verde{
+    background-color: #005C3A; 
+}
+
+.div-list{
+    justify-content: flex-end;
+}
+
+.nav-ul-s{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.nav-ul-s a{
+    color: #f0f8ff;
+    font-size: 1.125rem;
+    font-family: 'Laila', sans-serif; 
+    font-weight: 400;
+}
+
+.btn-green{
+background-color:  #00A86B;
+}
+
+.bg-green2{
+    background-color: #CCEEE1;
+}
+
+.estilo-form{
+    border-radius: 5%;
+    font-family: 'Laila', sans-serif;
+    text-align: center;
+    padding-top: 8rem;
+
+}
+.container{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+.dropdown-menu{
+    width: 30px;
+    text-align: center;
+   
+}
+.inputCorrecto {
+    border: solid forestgreen 5px;
+    opacity: 1;
+    
+}
+    
+.inputIncorrecto {
+    border: solid red 5px;
+    display: block;
+}
+
+.alert-danger{
+    margin-bottom: 0;
+    display: none;
+}
+
+.alert-danger-activo{
+    display: block;
+}
+
+.btn-green{
+    background-color:  #00A86B;
+    }
+    
+    .bg-green2{
+        background-color: #CCEEE1;
+    }
