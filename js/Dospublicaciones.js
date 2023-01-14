@@ -172,7 +172,7 @@ function chooseRender(item) {
     <div class="card card-img" >
       <img src="${item.img}" class="card-img-top img" alt="${item.description}">
       <div class="card-body">
-      <button type="button" class="btn btn-outline-success">Denle una croqueta</button>
+      <button type="button" class="btn btn-outline-secondary">Denle una croqueta</button>
         <h5 class="card-title text-center">${item.name}</h5>
         <p class="card-text ">${item.description}</p>
       </div>

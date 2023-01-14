@@ -9,20 +9,22 @@
       rel="stylesheet"
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/contacto.css" />
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="/css/navbar.css">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-verde d-flex justify-content-between">
-      <a class="navbar-brand" href="#">
-        <img
-          src="/images/logo.png"
-          alt="Logo"
-          class="navLogo"
-          id="logo"
-        />
-      </a>
+    <nav class="navbar navbar-expand-lg bg-verde d-flex justify-content-between nav-mobile-flex">
+      <div class="item1-mobile">
+
+        <a class="navbar-brand" href="#">
+          <img src="/images/logo.png"
+            alt="Logo" class="navLogo" id="logo"/>
+        </a>
+      </div>
+    <div class="item2-mobile">
+
       <div class="container-fluid">
         <button
           class="navbar-toggler"
@@ -69,17 +71,19 @@
           </ul>
         </div>
       </div>
+    </div>
+
     </nav>
   
     <main class="container w-90 mt-3 ">
       <div class="row row-cols-1 row-cols-md-2">
-        <div class="col bg-green2 estilo-form" id="descripcion">
+        <div class="col form-descripcion-div" id="descripcion">
           <h1>Formulario de contacto</h1>
-          <p>¿Tienes algún problema o sugerencia? <br> Nos gustaría que 
-            nos des tu opinión, mándanos tus datos y nos contactaremos 
-          contigo para poder tener una mejor comunidad. <br> 
-          Tu opinión es muy importante y nos ayuda a mejorar nuestra 
-          <br> comunidad.</p>
+          <p>¿Tienes algún problema o sugerencia?</p>
+          <p>Nos encantaría conocer más detalles de tu experiencia en PetBook.</p>
+          <p>Tu retroalimentación nos ayuda a crecer para convertirnos en una mejor comunidad.</p>
+
+          <img src="/images/img-perro-amarillo-mano.png" alt="" class="img-perro-amarillo-mano">
         </div>
         <div class="col mt-3">
           <form action="#" id="form-contacto" class="form">
@@ -89,7 +93,7 @@
               >
               <input
                 type="text"
-                class="form-control bg-green2"
+                class="form-control input-contacto"
                 id="nombre"
                 name="name"
                 placeholder="Juan"
@@ -101,7 +105,7 @@
               >
               <input
                 type="tel"
-                class="form-control bg-green2"
+                class="form-control input-contacto"
                 id="numeroTel"
                 placeholder="55 50 10 10 10"
                 name="telefono"
@@ -113,7 +117,7 @@
               >
               <input
                 type="email"
-                class="form-control bg-green2"
+                class="form-control input-contacto"
                 id="inputEmail"
                 placeholder="name@example.com"
               />
@@ -123,7 +127,7 @@
                 >Mensaje</label
               >
               <textarea
-                class="form-control bg-green2"
+                class="form-control input-contacto-mensaje"
                 id="exampleFormControlTextarea1"
                 rows="3"
                 placeholder="Hola me pongo en contacto con ustedes por...."
@@ -134,7 +138,7 @@
                 <!-- <ul id="alertaValidacionesTexto"></ul> -->
                 <p id="alertaValidacionesTexto"></p>
           </div>
-          <button type="button" id="btnEnviar" class="btn btn-green">Enviar</button>
+          <button type="button" id="btnEnviar" class="btn btn-contacto">Enviar</button>
           </form>
         </div>
       </div>

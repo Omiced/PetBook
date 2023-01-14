@@ -6,63 +6,65 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title></title>
-  <link rel="stylesheet" href="./css/navbar.css" />
+  <title>Registro</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/contacto.css">
-  <link rel="stylesheet" href="css/footer.css">
+  integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/navbar.css" />
   <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="css/footer.css"/>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-verde d-flex justify-content-between">
-    <a class="navbar-brand" href="#">
-      <img src="/images/logo.png" alt="Logo" class="navLogo" id="logo" />
-    </a>
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse div-list" id="navbarNav">
+  <nav class="navbar navbar-expand-lg  d-flex justify-content-between nav-mobile-flex">
 
-        <ul class="navbar-nav nav-ul-s">
-          <!-- <div class="links-menu"> -->
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contacto.html">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/AcercaDeNosotros.html">Acerca de Nosotros</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Entrar
-            </a>
-            <ul class="dropdown-menu bg-verde">
-              <li><a class="dropdown-item" href="login.html" style="color: black;">Iniciar Sesion</a></li>
-              <li><a class="dropdown-item" href="index.html" style="color: black;">Registrarse</a></li>
-            </ul>
-          </li>
-        </ul>
-        <!-- </div> -->
-        </ul>
+    <div class="item1-mobile">
+      <a class="navbar-brand" href="#">
+        <img src="/images/logo.png" alt="Logo" class="navLogo" id="logo" />
+      </a>
+    </div>
+    <div class="item2-mobile">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse div-list" id="navbarNav">
+
+          <ul class="navbar-nav nav-ul-s">
+            <!-- <div class="links-menu"> -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/AcercaDeNosotros.html">Acerca de Nosotros</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Entrar
+              </a>
+              <ul class="dropdown-menu bg-verde">
+                <li><a class="dropdown-item" href="login.html" style="color: black;">Iniciar Sesion</a></li>
+                <li><a class="dropdown-item" href="index.html" style="color: black;">Registrarse</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- </div> -->
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
 
   <main class="container w-90 mt-3 ">
     <div class="row row-cols-1 row-cols-md-2">
-      <div class="col bg-green2 estilo-form" id="descripcion">
-        <img src="/images/logo.png" alt="" width="200px" id="logo" />
-
-        <p>Donde tu mascota es la protagonista.
-
-        </p>
+      <div class="col estilo-form" id="descripcion">
+        <img src="images/img-chica-paseando-perro.png" alt="" class="img-chica-paseando-perro"/>
+        <p>Donde tu mascota es la<br> protagonista.</p>
       </div>
       <div class="col mt-3">
         <h3>Crear una cuenta</h3>
@@ -71,22 +73,20 @@
           <div class="formularioGrupo" id="grupoNombre">
             <label for="input-nombre" class="form-label">Nombre de la mascota</label>
             <div class="formularioInput">
-              <input type="text" class="form-control bg-green2" name="inputNombre" id="inputNombre"
+              <input type="text" class="form-control estilo-inputs" name="inputNombre" id="inputNombre"
                 placeholder="Copito">
             </div>
             <div class="alert alert-danger" role="error">
               <li>Nombre no válido.</li>
-              <li>El nombre no puede estar vacio.</li>
+              <li>El nombre no puede estar vacio</li>
               <li>El nombre solo puede contener letras, numeros.</li>
-              <li>La primera letra debe iniciar con MAYUSCULA.</li>
-              <li>Ejemplo: Bellacat</li>
             </div>
           </div>
           <!-- telefono-->
           <div class="formularioGrupo" id="grupoTelefono">
             <label for="input-telefono" class="form-label">Número de Teléfono</label>
             <div class="formularioInput">
-              <input type="number" class="form-control bg-green2" name="inputTelefono" id="inputTelefono"
+              <input type="tel" class="form-control estilo-inputs" name="inputTelefono" id="inputnumeroTel"
                 placeholder="55 50 10 10 10">
             </div>
             <div class="alert alert-danger" role="error">
@@ -114,7 +114,7 @@
           <!--Email-->
           <div class="formularioGrupo" id="grupoEmail">
             <label for="input-email" class="form-label">Email del dueño</label>
-            <input type="email" class="form-control bg-green2" name="inputEmail" id="inputEmail"
+            <input type="email" class="form-control estilo-inputs" name="inputEmail" id="inputEmail"
               placeholder="name@example.com" />
             <div class="alert alert-danger" role="error">
               <li>Ingresa un email válido</li>
@@ -124,7 +124,7 @@
           <!--contraseña-->
           <div class="formularioGrupo" id="grupoPassword">
             <label for="input-password" class="form-label">Contraseña</label>
-            <input type="password" class="form-control bg-green2" name="inputPassword" id="inputPassword"
+            <input type="password" class="form-control estilo-inputs" name="inputPassword" id="inputPassword"
               placeholder="********" />
             <div class="alert alert-danger" role="error">
               <li>Ingresa una contraseña valida</li>
@@ -136,29 +136,26 @@
           <!--repetircontraseña-->
           <div class="formularioGrupo" id="grupoPassword2">
             <label for="input-Password2" class="form-label">Repetir contraseña</label>
-            <input type="password" class="form-control bg-green2" name="inputPassword2" id="inputPassword2"
+            <input type="password" class="form-control estilo-inputs" name="inputPassword2" id="inputPassword2"
               placeholder="********" />
             <div class="alert alert-danger" role="error">
               <li>La contraseña debe ser igual a la anterior</li>
             </div>
           </div>
           <div class="col-md-8 order-md-1 mt-2">
-            <button type="button" id="btnRegistro" class="btn btn-green">Registrarme</button>
-            <button type="button" id="btnLogin" class="btn btn-green">Ya tengo cuenta</button>
+            <button type="button" id="btnRegistro" class="btn btn-color">Registrarme</button>
+            <button type="button" id="btnLogin" class="btn btn-color">Ya tengo cuenta</button>
 
             <div class="alert alert-danger fade show" style="display:none" role="alert" id="alertaValidaciones">
               <p id="alertaValidacionesTexto"></p>
             </div>
-            <!-- <button type="button" id="btnLogin" class="btn btn-green"><a href="/Login.html" class="btn-link">Ya tengo cuenta</a></button> -->
           </div>
 
         </form>
       </div>
     </div>
   </main>
-  <div class=" img-container">
-    <img src="/images/patitas-removebg-preview (2).png">
-  </div>
+
   <footer>
     <ul class="nav justify-content-center">
       <li class="nav-item">
@@ -174,7 +171,7 @@
         <a class="nav-link" target="_blank" href="https://www.youtube.com/watch?v=dO5zpQtWBKU">Mascotas</a>
       </li>
     </ul>
-    <p class="text-center">Copyright 2022 &#xa9 Generation México.</p>
+    <p class="text-center">Copyright 2022 &#xa9 Generation México</p>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

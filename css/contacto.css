@@ -1,44 +1,44 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
 
-.caja-font{
-    font-family: 'Laila', sans-serif;
-    
-}
 body{
     overflow-x: hidden;
-  }
-.bg-green2{
-    background-color: #CCEEE1;
-}
-.perrito{
     
-    left: 650px;
-    bottom: 250px;
-    width: 500px;
-    height: 500px;
 }
 
-.estilo-form{
-    border-radius: 5%;
-    font-family: 'Laila', sans-serif;
-    text-align: center;
-    padding-top: 8rem;
-   
-}
-.container{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-
-  .btn-link{
+.btn-link{
     color: white;
     text-decoration: none;
 }
 
+.form-descripcion-div{
+    font-family: var(--font-nunito);
+}
+
+.form-descripcion-div h1{
+    font-weight: 600;
+}
+.form-descripcion-div p{
+    width: 85%;
+}
+
+#form-contacto .input-contacto{
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--gris-oscuro);
+}
 
 
 
+#form-contacto .input-contacto-mensaje{
+    border-bottom: 1px solid rgb(84, 84, 84);
+}
 
+#form-contacto .btn-contacto{
+    background-color:  #FFC75F;
+}
+
+.img-perro-amarillo-mano{
+    width: 100%;
+    height: auto;
+}
 
