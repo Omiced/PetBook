@@ -209,8 +209,17 @@ window.addEventListener("load", () => {
 //borrar los datos de inicio de sesion al momento de cerrarla 
 btnCerrar.addEventListener("click", function (event) {
   event.preventDefault();
+  const usuarios = localStorage.getItem("usuarios");
+  let usuariosArr = JSON.stringify(usuarios)
+  localStorage.setItem("usuarios", JSON.stringify(usuariosArr));
+  
+  //localStorage.clear();
+  //usuariosArr[0].loggedIn==false;
+  
+   //obtenerLocalStorage();
+  //localStorage.setItem("usuarios", JSON.stringify(x));
+ 
   window.location.href = "login.html";
-  //ocalStorage.clear();
-  //localStorage.setItem("usuarios", JSON.stringify(usuariosArr));
-
+  
+  
 });
