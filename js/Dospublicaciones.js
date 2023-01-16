@@ -6,6 +6,8 @@ let publicaciones = [];
 let btnEnviar = document.getElementById("btnEnviar");
 let txtNombre = document.getElementById("txtNombre");
 let txtDescripcion = document.getElementById("txtDescripcion");
+//DOM CERRAR SESION 
+let btnCerrar = document.getElementById("btnCerrarSesion");
 //let inputImg = document.getElementById("inputImg");
 let base64Img = "";
 let alertaValidaciones = document.getElementById("alertaValidaciones");
@@ -202,4 +204,13 @@ function obtenerLocalStorage() {
 window.addEventListener("load", () => {
   obtenerLocalStorage();
   renderItems(publicaciones);
+});
+
+//borrar los datos de inicio de sesion al momento de cerrarla 
+btnCerrar.addEventListener("click", function (event) {
+  event.preventDefault();
+  window.location.href = "login.html";
+  //ocalStorage.clear();
+  //localStorage.setItem("usuarios", JSON.stringify(usuariosArr));
+
 });

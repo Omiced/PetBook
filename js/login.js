@@ -1,5 +1,7 @@
 const btnRegistroEl = document.getElementById("btnRegistro");
 const divEl = document.querySelector(".alerts");
+
+
 const prueba = [
   {
     usuario: "Josue",
