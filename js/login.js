@@ -39,6 +39,14 @@ function obtenerLocalStorage() {
   if (!usuarios) return;
   usuariosArr = JSON.parse(usuarios);
 }
+//Funcion logueado
+function logueado() {
+  if (usuariosArr != null) {
+    window.location.href = "Publicaciones.html";
+  }
+}
+
+logueado(); //Saber si el usuario ya estaba registrado
 btnRegistroEl.addEventListener("click", (e) => {
   e.preventDefault();
   divEl.innerHTML = "";
