@@ -2,7 +2,9 @@ const formulario = document.getElementById("formularioIndex");
 const inputs = document.querySelectorAll("#formularioIndex input");
 const btnRegistro = document.getElementById("btnRegistro");
 
-let usuarios = [];
+// let usuarios = [];
+let usuariosArr = [];
+
 
 const expresiones = {
   nombreRegex: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/,
@@ -115,14 +117,14 @@ btnRegistro.addEventListener("click", function (event) {
 
   //SetDatos - INICIA
   addItem(nombre, telefono, email, password);
-  setLocal(usuarios);
+  setLocal(usuariosArr);
   window.location.href = "Publicaciones.html";
 }); //Event.Listener.btnRegistro - TERMINA
 
 //FUNCIONES LOCALSTORAGE
 
 function addItem(name, telephone, email, password) {
-  usuarios.push({
+  usuariosArr.push({
     usuario: name,
     telephone: telephone,
     email: email,
@@ -132,11 +134,23 @@ function addItem(name, telephone, email, password) {
 }
 
 function setLocal(arr) {
+  usuariosArr[0].loggedIn = true;
   window.localStorage.setItem("usuarios", JSON.stringify(arr));
 }
 
-// function obtenerLocalStorage() {
-//   let publicacion = localStorage.getItem("publicaciones");
-//   if (!publicacion) return;
-//   publicaciones = JSON.parse(publicacion);
-// }
+function obtenerLocalStorage() {
+  const usuarios = localStorage.getItem("usuarios");
+  if (!usuarios) return;
+  usuariosArr = JSON.parse(usuarios);
+  return true
+}
+
+window.addEventListener("load", (e) => {
+  e.preventDefault;
+  // obtenerLocalStorage();
+  if(obtenerLocalStorage() == true && usuariosArr[0].loggedIn == true){
+    window.location.href = "Publicaciones.html";
+  }else{
+    console.log("Inicia sesión o registrate")
+  }
+});
