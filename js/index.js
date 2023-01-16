@@ -2,7 +2,7 @@ const formulario = document.getElementById("formularioIndex");
 const inputs = document.querySelectorAll("#formularioIndex input");
 const btnRegistro = document.getElementById("btnRegistro");
 
-let datosUsuario = [];
+let usuarios = [];
 
 const expresiones = {
   nombreRegex: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/,
@@ -91,13 +91,10 @@ inputs.forEach((input) => {
 //Event.listener.btnRegistro - INICIA
 btnRegistro.addEventListener("click", function (event) {
   event.preventDefault();
-  console.log(campos);
   if (!campos.telefono) return;
   if (!campos.email) return;
   if (!campos.nombre) return;
   if (!campos.password) return;
-  window.location.href = "Publicaciones.html";
-
   //es para limpiar los inputs :v
   let inputFocused = "";
   let elements = document.querySelectorAll(
@@ -109,26 +106,33 @@ btnRegistro.addEventListener("click", function (event) {
       inputFocused.valueOf = "";
     });
   } //TERMINA
+
+  //obtener datos;
+  const nombre = document.getElementById("input_nombre").value;
+  const telefono = document.getElementById("input_telefono").value;
+  const email = document.getElementById("input_email").value;
+  const password = document.getElementById("input_password").value;
+
   //SetDatos - INICIA
-  addItem(nombre, telefono, email, password, password2);
-  setLocal(datosUsuario);
-  //setDatos - TERMINA
+  addItem(nombre, telefono, email, password);
+  setLocal(usuarios);
+  window.location.href = "Publicaciones.html";
 }); //Event.Listener.btnRegistro - TERMINA
 
 //FUNCIONES LOCALSTORAGE
 
-function addItem(name, telephone, email, password1, password2) {
-  datosUsuario.push({
-    name: name,
+function addItem(name, telephone, email, password) {
+  usuarios.push({
+    usuario: name,
     telephone: telephone,
     email: email,
-    password1: password1,
-    password2: password2,
+    password: password,
+    loggedIn: false,
   });
 }
 
 function setLocal(arr) {
-  window.localStorage.setItem("datosUsuario", JSON.stringify(arr));
+  window.localStorage.setItem("usuarios", JSON.stringify(arr));
 }
 
 // function obtenerLocalStorage() {

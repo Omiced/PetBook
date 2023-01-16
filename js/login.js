@@ -54,3 +54,8 @@ btnRegistroEl.addEventListener("click", (e) => {
   }
   divEl.innerHTML = "";
 });
+
+window.addEventListener("load", (e) => {
+  e.preventDefault;
+  obtenerLocalStorage();
+});
