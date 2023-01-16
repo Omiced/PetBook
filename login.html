@@ -68,15 +68,12 @@
       <div class="col mt-3">
         <h3>Ingresa a tu cuenta</h3>
         <form action="#" class="formulario" id="formularioIndex">
-          <!--Email-->
-          <div class="formularioGrupo" id="grupoEmail">
-            <label for="input-email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control estilo-inputs" name="inputEmail" id="inputEmail"
-              placeholder="name@example.com" />
-            <div class="alert alert-danger" role="error">
-              <li>Ingresa un email válido</li>
-              <li>Ejemplo: gatitaflow@gmail.com</li>
-            </div>
+         <!--Nombre del usuario-->
+         <div class="formularioGrupo" id="grupo_nombre">
+          <label for="input-nombre" class="form-label">Nombre de usuario</label>
+          <div class="formularioInput">
+            <input type="text" class="form-control estilo-inputs" name="nombre" id="input_nombre"
+              placeholder="Copito">
           </div>
           <!--contraseña-->
           <div class="formularioGrupo" id="grupoPassword">
@@ -90,19 +87,10 @@
               <li>Ejemplo: UnaGatita60$</li>
             </div>
           </div>
-          <!--repetircontraseña-->
-          <div class="formularioGrupo" id="grupoPassword2">
-            <label for="input-Password2" class="form-label">Repetir contraseña</label>
-            <input type="password" class="form-control estilo-inputs" name="inputPassword2" id="inputPassword2"
-              placeholder="********" />
-            <div class="alert alert-danger" role="error">
-              <li>La contraseña debe ser igual a la anterior</li>
-            </div>
-          </div>
+          
           <div class="col-md-8 order-md-1 mt-2">
-            <button type="button" id="btnRegistro" class="btn btn-color">Registrarme</button>
-            <button type="button" id="btnLogin" class="btn btn-color">Ya tengo cuenta</button>
-
+            <button type="button" id="btnRegistro" class="btn btn-color">Iniciar Sesión</button>
+           
             <div class="alert alert-danger fade show" style="display:none" role="alert" id="alertaValidaciones">
               <p id="alertaValidacionesTexto"></p>
             </div>
