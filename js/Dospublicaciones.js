@@ -1,7 +1,8 @@
 const btnAgregar = document.getElementById("btnAgregar");
 const itemsContainer = document.getElementById("container");
 let publicaciones = [];
-
+let btnLike = document.getElementById("btnLike");
+let likes = document.getElementById("likes")
 //DOM FORMULARIO
 let btnEnviar = document.getElementById("btnEnviar");
 let txtNombre = document.getElementById("txtNombre");
@@ -163,7 +164,7 @@ function renderItems(items) {
   itemsContainer.innerHTML = "";
 
   publicaciones.forEach((item) =>
-    itemsContainer.insertAdjacentHTML("beforeend", chooseRender(item))
+    itemsContainer.insertAdjacentHTML("afterbegin", chooseRender(item))
   );
 }
 
@@ -173,12 +174,17 @@ function chooseRender(item) {
     <div class="card card-img" >
       <img src="${item.img}" class="card-img-top img" alt="${item.description}">
       <div class="card-body">
-      <button type="button" class="btn btn-outline-secondary">Denle una croqueta</button>
+      <button type="button" class="btn btn-outline-secondary" id="btnLike" value="1" data-counter >Denle una croqueta</button>
+      <span id = "likes">
+      <img src="images/croquetita.png" alt="" id = "croquetita" align="right"/>
+      </span>
         <h5 class="card-title text-center">${item.name}</h5>
         <p class="card-text ">${item.description}</p>
+
       </div>
     </div>
     </div>
+    <script  src="/js/Dospublicaciones.js"> </script>
     `;
 
   const markupText = `
@@ -223,3 +229,17 @@ btnCerrar.addEventListener("click", function (event) {
 
   window.location.href = "login.html";
 });
+
+let cant1 = 0;
+document.addEventListener("click", (event) => {
+  const clickedElement = event.target;
+  
+  if (!clickedElement.matches("#btnLike")) {
+    return;
+  }
+  console.log("Le has dado like a la publicacion");
+});
+
+
+
+
