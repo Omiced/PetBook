@@ -1,7 +1,6 @@
 const btnRegistroEl = document.getElementById("btnRegistro");
 const divEl = document.querySelector(".alerts");
 
-
 const prueba = [
   {
     usuario: "Josue",
@@ -56,14 +55,17 @@ btnRegistroEl.addEventListener("click", (e) => {
     return;
   }
   divEl.innerHTML = "";
+  usuariosArr[0].loggedIn = true;
+  localStorage.setItem("usuarios", JSON.stringify(usuariosArr));
+  window.location.href = "Publicaciones.html";
 });
 
 window.addEventListener("load", (e) => {
   e.preventDefault;
   obtenerLocalStorage();
-  if(usuariosArr[0].loggedIn == true){
+  if (usuariosArr.length <= 0) return;
+  console.log(usuariosArr);
+  if (usuariosArr[0].loggedIn == true) {
     window.location.href = "Publicaciones.html";
   }
 });
-
-

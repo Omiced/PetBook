@@ -6,7 +6,7 @@ let publicaciones = [];
 let btnEnviar = document.getElementById("btnEnviar");
 let txtNombre = document.getElementById("txtNombre");
 let txtDescripcion = document.getElementById("txtDescripcion");
-//DOM CERRAR SESION 
+//DOM CERRAR SESION
 let btnCerrar = document.getElementById("btnCerrarSesion");
 //let inputImg = document.getElementById("inputImg");
 let base64Img = "";
@@ -14,7 +14,7 @@ let alertaValidaciones = document.getElementById("alertaValidaciones");
 let alertaValidacionesTexto = document.getElementById(
   "alertaValidacionesTexto"
 );
-let imagentemp=document.getElementById("imagentemp");
+let imagentemp = document.getElementById("imagentemp");
 let validos = 0;
 let idTimeout;
 
@@ -123,28 +123,27 @@ btnEnviar.addEventListener("click", function (event) {
     setLocal(publicaciones);
     renderItems(publicaciones);
   }
-//    let inputFocused="";
-//  let elements = document.querySelectorAll("input[type='text'], input[type='password']");
-//  for (let i =0; i<elements.length;i++){
-//    elements[i].addEventListener("focus", function(){
-//      inputFocused = this;
-//      inputFocused.value="";
-//   });
-// }
-txtNombre.value= "";
-txtDescripcion.value="";
-input.value="";
-tmpimagen.src="";
-txtNombre.focus();
+  //    let inputFocused="";
+  //  let elements = document.querySelectorAll("input[type='text'], input[type='password']");
+  //  for (let i =0; i<elements.length;i++){
+  //    elements[i].addEventListener("focus", function(){
+  //      inputFocused = this;
+  //      inputFocused.value="";
+  //   });
+  // }
+  txtNombre.value = "";
+  txtDescripcion.value = "";
+  input.value = "";
+  tmpimagen.src = "";
+  txtNombre.focus();
 });
-txtNombre.addEventListener("blur", function(event){
+txtNombre.addEventListener("blur", function (event) {
   event.preventDefault();
   event.target.value = event.target.value.trim();
-}
-);
-txtDescripcion.addEventListener("blur", function(event){
+});
+txtDescripcion.addEventListener("blur", function (event) {
   event.preventDefault();
- event.target.value = event.target.value.trim();
+  event.target.value = event.target.value.trim();
 });
 
 function addItem(urlImg, name, description) {
@@ -206,20 +205,21 @@ window.addEventListener("load", () => {
   renderItems(publicaciones);
 });
 
-//borrar los datos de inicio de sesion al momento de cerrarla 
+//borrar los datos de inicio de sesion al momento de cerrarla
 btnCerrar.addEventListener("click", function (event) {
   event.preventDefault();
-  const usuarios = localStorage.getItem("usuarios");
-  let usuariosArr = JSON.stringify(usuarios)
-  localStorage.setItem("usuarios", JSON.stringify(usuariosArr));
-  
-  //localStorage.clear();
-  //usuariosArr[0].loggedIn==false;
-  
-   //obtenerLocalStorage();
+  const usuarios = JSON.parse(localStorage.getItem("usuarios"));
+  if (!usuarios) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  const logueado = usuarios.filter((usuario) => usuario.loggedIn == true);
+  logueado[0].loggedIn = false;
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+  //obtenerLocalStorage();
   //localStorage.setItem("usuarios", JSON.stringify(x));
- 
+
   window.location.href = "login.html";
-  
-  
 });
