@@ -123,6 +123,13 @@ btnEnviar.addEventListener("click", function (event) {
     addItem(base64Img, txtNombre.value, txtDescripcion.value);
     setLocal(publicaciones);
     renderItems(publicaciones);
+
+    //Limpia los campos nombres y descripción
+    txtNombre.value = "";
+    txtDescripcion.value = "";
+    input.value = "";
+    tmpimagen.src = "";
+    txtNombre.focus();
   }
   //    let inputFocused="";
   //  let elements = document.querySelectorAll("input[type='text'], input[type='password']");
@@ -132,11 +139,6 @@ btnEnviar.addEventListener("click", function (event) {
   //      inputFocused.value="";
   //   });
   // }
-  txtNombre.value = "";
-  txtDescripcion.value = "";
-  input.value = "";
-  tmpimagen.src = "";
-  txtNombre.focus();
 });
 txtNombre.addEventListener("blur", function (event) {
   event.preventDefault();

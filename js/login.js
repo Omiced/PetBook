@@ -69,3 +69,10 @@ window.addEventListener("load", (e) => {
     window.location.href = "Publicaciones.html";
   }
 });
+
+
+//Botón - "No tengo cuento"
+let btnSinCuenta = document.getElementById("btnSinCuenta");
+btnSinCuenta.addEventListener("click", () => {
+  window.location.href = "index.html";
+})

@@ -36,6 +36,13 @@ p{
     background-color: var(--amarillo-base);
 }
 
+#formularioIndex #btnTengoCuenta{
+    background-color: var(--white);
+}
+#formularioIndex #btnTengoCuenta:hover{
+    text-decoration: underline;
+}
+
 
 /* ----- -----  Estilos para Validacion ----- ----- */
 
@@ -59,4 +66,5 @@ p{
 .alert-danger-activo{
     display: block;
 }
+
 

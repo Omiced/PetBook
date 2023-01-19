@@ -7,7 +7,7 @@ let usuariosArr = [];
 
 
 const expresiones = {
-  nombreRegex: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/,
+  nombreRegex : /^[a-zA-Z ]{2,}$/,
   passwordRegex: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
   emailRegex: /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/,
   telefonoRegex: /^(?!(0000000000|0000000001))\d{10}$/,
@@ -154,3 +154,11 @@ window.addEventListener("load", (e) => {
     console.log("Inicia sesión o registrate")
   }
 });
+
+
+//Botón - "Ya tengo cuenta"
+let btnTengoCuenta = document.getElementById("btnTengoCuenta");
+btnTengoCuenta.addEventListener("click", () => {
+  window.location.href = "login.html";
+})
+

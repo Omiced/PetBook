@@ -36,3 +36,13 @@ p{
     background-color: var(--amarillo-base);
 }
 
+#formularioIndex #btnSinCuenta{
+    background-color: var(--white);
+}
+
+#formularioIndex #btnSinCuenta:hover{
+    Text-decoration: underline; 
+}
+
+
+
