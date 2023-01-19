@@ -82,3 +82,32 @@ to{
     margin-right: 10px;
   }
 }
+
+.cards_nosotros_container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.card_nosotros{
+  border: 2px solid var(--amarillo-base);
+  padding: 1.25rem;
+  border-radius: 5px;
+}
+
+.card_nosotros_title{
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  display: block;
+ 
+  padding: 10px 0;
+  border-bottom: 2px solid var(--amarillo-base);
+
+}
+
+.card_nosotros_text{
+  font-size: 1rem;
+  line-height: 1.2;
+}
