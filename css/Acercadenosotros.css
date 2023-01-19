@@ -13,10 +13,6 @@ body{
   margin-bottom: 2rem;
 }
 
-.div-center{
-  margin: 0 auto;
-}
-
 .btn-color{
   background-color: var(--amarillo-base);
 }
@@ -37,7 +33,12 @@ body{
     box-shadow: 8px 10px 12px -5px rgb(0 0 0 / .4);
   }
 
-
+  .col{
+    padding: 0;
+  }
+  .gap{
+    gap:10px;
+  }
   @keyframes pata{ 
     from{
         opacity: 1;
@@ -76,3 +77,8 @@ to{
   animation-direction: alternate;
 }
 
+@media((max-width: 990px) and (min-width: 768px)){
+  .col{
+    margin-right: 10px;
+  }
+}

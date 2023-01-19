@@ -51,13 +51,15 @@
 }
 
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 600px) {
     .navbar {
         padding: 0 0.5rem;
     }
-    .navLogo {
-        width: 30%;
+
+    .navLogo{
+        width: 20%;
     }
+    
     
     #logo:hover {
         transform: none;
@@ -65,3 +67,6 @@
 
 
 }
+
+
+
