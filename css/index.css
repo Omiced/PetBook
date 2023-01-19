@@ -7,12 +7,12 @@ body{
 /*estilo párrafo "Donde tu mascota es la protagonista*/
 p{ 
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight:650;
 }
 
 /* estilos imagen */
 .img-chica-paseando-perro{
-    width: 90%;
+    width: 80%;
 }
 
 /* div = img y párrafo "Donde tu mascota es la protagonista" */
@@ -72,15 +72,26 @@ p{
     width: 100%;
     display: flex;
     gap: 10px;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
-#btnRegistro{
+/* #btnRegistro{
     width: 40%;
 }
 
 #btnTengoCuenta{
-    width: 40%;
-}
+    width: 0%;
+} */
 
+
+@media only screen and (max-width: 600px) {
+    
+    p{ 
+        font-size: 1.7rem;
+        font-weight:650;
+    }
+    
+
+
+}

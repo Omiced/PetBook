@@ -4,6 +4,10 @@ body{
   font-family: var(--font-nunito);
 }
 
+.espaciado{
+  padding-bottom: 1rem;
+}
+
 .texto-acerca-nosotros h1{
   font-weight: 600;
 }
