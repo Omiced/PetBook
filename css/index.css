@@ -67,4 +67,20 @@ p{
     display: block;
 }
 
+.div-btns{
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#btnRegistro{
+    width: 40%;
+}
+
+#btnTengoCuenta{
+    width: 40%;
+}
 
