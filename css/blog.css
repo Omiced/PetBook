@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+    
+}
+
+
+
+
+
+
+section{
+    display: flex;
+    justify-content: space-evenly;
+    
+   
+}
+
+.card-img-top{
+    width: 286px;
+    height: 250px;
+}
