@@ -129,6 +129,7 @@ btnEnviar.addEventListener("click", function (event) {
     txtDescripcion.value = "";
     input.value = "";
     tmpimagen.src = "";
+base64Img = "";
     txtNombre.focus();
   }
   //    let inputFocused="";
