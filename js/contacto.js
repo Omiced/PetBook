@@ -7,11 +7,13 @@ let alertaValidacionesTexto = document.getElementById(
   "alertaValidacionesTexto"
 );
 let mensajeEl = document.getElementById("exampleFormControlTextarea1");
-
+const modalSuccess = document.querySelector(".modal-success");
+const SEG_CLOSE_MODAL = 3;
 let idTimeout;
 
 // let nombreRegex1 = /^[A-Z][a-zA-Z]+$/;
-let nombreRegex = /(^[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)$/;
+let nombreRegex =
+  /(^[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)((\s[A-ZÁÉÍÓÚ a-zñáéíóú]{1}([a-zñáéíóú]+){2,})?)$/;
 let numeroRegex = /^[0-9]{10}$/;
 let emailRegex =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -76,13 +78,11 @@ btnEnviar.addEventListener("click", function (event) {
     validos++;
   }
 
-  if (mensajeEl.value.length === 0){
+  if (mensajeEl.value.length === 0) {
     alertaValidaciones.style.display = "block";
     alertaValidaciones.innerHTML += `<li>El mensaje no puede estar vacio</li>`;
     mensajeEl.style.border = "solid red 5px";
- }
-
-
+  }
 
   if (idTimeout != undefined && idTimeout != null) {
     clearTimeout(idTimeout);
@@ -117,5 +117,13 @@ function enviarcorreo(nombre, numero, correo, mensaje1) {
     From: "empresaPetBook@gmail.com",
     Subject: nombre,
     Body: `Recibio un mensaje de ${nombre}, El mensaje es: ${mensaje1}, telefono:${numero} y correo ${correo}`,
-  }).then((message) => alert(message));
-}//btnenviar
+  }).then((message) => {
+    if (message === "OK") {
+      modalSuccess.showModal();
+    }
+    setTimeout(closeModal, SEG_CLOSE_MODAL * 1000);
+  });
+} //btnenviar
+function closeModal() {
+  modalSuccess.close();
+}

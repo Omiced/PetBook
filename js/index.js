@@ -1,13 +1,14 @@
 const formulario = document.getElementById("formularioIndex");
 const inputs = document.querySelectorAll("#formularioIndex input");
 const btnRegistro = document.getElementById("btnRegistro");
+const modalSuccess = document.querySelector(".modal-success");
+const SEG_TO_LOGIN = 3;
 
 // let usuarios = [];
 let usuariosArr = [];
 
-
 const expresiones = {
-  nombreRegex : /^[a-zA-Z-0-9 ]{2,}$/,
+  nombreRegex: /^[a-zA-Z-0-9 ]{2,}$/,
   passwordRegex: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
   emailRegex: /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/,
   telefonoRegex: /^(?!(0000000000|0000000001))\d{10}$/,
@@ -97,18 +98,6 @@ btnRegistro.addEventListener("click", function (event) {
   if (!campos.email) return;
   if (!campos.nombre) return;
   if (!campos.password) return;
-  //es para limpiar los inputs :v
-  let inputFocused = "";
-  let elements = document.querySelectorAll(
-    "input[type='text'], input[type='password']"
-  );
-  for (let i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("focus", function () {
-      inputFocused = this;
-      inputFocused.valueOf = "";
-    });
-  } //TERMINA
-
   //obtener datos;
   const nombre = document.getElementById("input_nombre").value;
   const telefono = document.getElementById("input_telefono").value;
@@ -118,10 +107,19 @@ btnRegistro.addEventListener("click", function (event) {
   //SetDatos - INICIA
   addItem(nombre, telefono, email, password);
   setLocal(usuariosArr);
-  window.location.href = "Publicaciones.html";
+  console.log(usuariosArr);
+  modalSuccess.showModal();
+
+  delayLogin(SEG_TO_LOGIN);
 }); //Event.Listener.btnRegistro - TERMINA
 
 //FUNCIONES LOCALSTORAGE
+
+function delayLogin(segs) {
+  setTimeout(() => {
+    window.location.href = "login.html";
+  }, segs * 1000);
+}
 
 function addItem(name, telephone, email, password) {
   usuariosArr.push({
@@ -134,7 +132,6 @@ function addItem(name, telephone, email, password) {
 }
 
 function setLocal(arr) {
-  usuariosArr[0].loggedIn = true;
   window.localStorage.setItem("usuarios", JSON.stringify(arr));
 }
 
@@ -142,23 +139,20 @@ function obtenerLocalStorage() {
   const usuarios = localStorage.getItem("usuarios");
   if (!usuarios) return;
   usuariosArr = JSON.parse(usuarios);
-  return true
 }
 
-window.addEventListener("load", (e) => {
-  e.preventDefault;
-  // obtenerLocalStorage();
-  if(obtenerLocalStorage() == true && usuariosArr[0].loggedIn == true){
-    window.location.href = "Publicaciones.html";
-  }else{
-    console.log("Inicia sesión o registrate")
-  }
-});
-
+// window.addEventListener("load", (e) => {
+//   e.preventDefault;
+//   // obtenerLocalStorage();
+//   if (obtenerLocalStorage() == true && usuariosArr[0].loggedIn == true) {
+//     window.location.href = "Publicaciones.html";
+//   } else {
+//     console.log("Inicia sesión o registrate");
+//   }
+// });
 
 //Botón - "Ya tengo cuenta"
 let btnTengoCuenta = document.getElementById("btnTengoCuenta");
 btnTengoCuenta.addEventListener("click", () => {
   window.location.href = "login.html";
-})
-
+});

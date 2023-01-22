@@ -71,18 +71,19 @@ p{
     margin: 0 auto;
     width: 100%;
     display: flex;
+    flex-direction: column;
     gap: 10px;
     justify-content: left;
     align-items: center;
 }
 
-/* #btnRegistro{
-    width: 40%;
+ #btnRegistro{
+    width: 100%;
 }
 
 #btnTengoCuenta{
-    width: 0%;
-} */
+    width: 100%;
+} 
 
 
 @media only screen and (max-width: 600px) {
@@ -94,4 +95,76 @@ p{
     
 
 
+}
+
+/* modal */
+.modal-success{
+    border-radius: 5px;
+    border:none;
+    padding: 7px;
+    animation: animationBorder 1s ease infinite; 
+    /* background: linear-gradient(to bottom,  var(--amarillo-base),var(--amarillo-palido)); */
+}
+
+.modal-success::backdrop{
+    background-color: rgb(0 0 0 / .5);
+}
+.modal-container{
+    background-color: white;
+    border-radius: 5px;
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem; 
+    gap: 10px;
+    font-family: inherit;
+}
+
+.success-icon{
+    width: 20%;
+}
+
+@keyframes animationBorder {
+    0%{
+        background-position: 0% 25% ;
+        background: linear-gradient(to right,  var(--amarillo-base),var(--amarillo-intermedio),var(--amarillo-palido));
+    }
+   
+    25%{
+        background-position: 25% 49%;
+        background: linear-gradient(to bottom,  var(--amarillo-base),var(--amarillo-intermedio),var(--amarillo-palido));
+
+    }
+
+
+    50%{
+        background-position: 50% 75% ;
+        background: linear-gradient(to left,  var(--amarillo-base),var(--amarillo-intermedio),var(--amarillo-palido));
+    }
+  
+    75%{
+        background-position: 75% 100%;
+        background: linear-gradient(to top,  var(--amarillo-base),var(--amarillo-intermedio),var(--amarillo-palido));}
+
+    100%{
+        background-position: 100% 0% ;
+        background: linear-gradient(to right,var(--amarillo-base),var(--amarillo-intermedio),var(--amarillo-palido));
+
+    }
+    
+}
+
+.success-title{
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.success-text{
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
 }
