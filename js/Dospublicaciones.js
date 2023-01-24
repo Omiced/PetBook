@@ -2,7 +2,7 @@ const btnAgregar = document.getElementById("btnAgregar");
 const itemsContainer = document.getElementById("container");
 let publicaciones = [];
 let btnLike = document.getElementById("btnLike");
-let likes = document.getElementById("likes")
+//let likes = document.getElementById("likes")
 //DOM FORMULARIO
 let btnEnviar = document.getElementById("btnEnviar");
 let txtNombre = document.getElementById("txtNombre");
@@ -120,7 +120,7 @@ btnEnviar.addEventListener("click", function (event) {
     quitarAlertas();
     temporizador();
 
-    addItem(base64Img, txtNombre.value, txtDescripcion.value);
+    addItem(id, base64Img, txtNombre.value, txtDescripcion.value);
     setLocal(publicaciones);
     renderItems(publicaciones);
 
@@ -131,6 +131,7 @@ btnEnviar.addEventListener("click", function (event) {
     tmpimagen.src = "";
 base64Img = "";
     txtNombre.focus();
+    id++;
   }
   //    let inputFocused="";
   //  let elements = document.querySelectorAll("input[type='text'], input[type='password']");
@@ -149,9 +150,10 @@ txtDescripcion.addEventListener("blur", function (event) {
   event.preventDefault();
   event.target.value = event.target.value.trim();
 });
-
-function addItem(urlImg, name, description) {
+let id =1;
+function addItem(id, urlImg, name, description) {
   publicaciones.push({
+    id: id,
     img: urlImg,
     name: name,
     description: description,
@@ -178,8 +180,9 @@ function chooseRender(item) {
       <img src="${item.img}" class="card-img-top img" alt="${item.description}">
       <div class="card-body">
       <button type="button" class="btn btn-outline-secondary" id="btnLike" value="1" data-counter >Denle una croqueta</button>
-      <span id = "likes">
+    
       <img src="images/croquetita.png" alt="" id = "croquetita" align="right"/>
+      <span id = "likes">
       </span>
         <h5 class="card-title text-center">${item.name}</h5>
         <p class="card-text ">${item.description}</p>
@@ -233,15 +236,20 @@ btnCerrar.addEventListener("click", function (event) {
   window.location.href = "login.html";
 });
 
-let cant1 = 0;
-document.addEventListener("click", (event) => {
+ let cant1 = 0;
+ const cajas = document.querySelectorAll("#container");
+ cajas.forEach((item)=>
+item.addEventListener("click", (event) => {
   const clickedElement = event.target;
-  
   if (!clickedElement.matches("#btnLike")) {
     return;
   }
-  console.log("Le has dado like a la publicacion");
-});
+  let megusta = document.querySelector("#likes");
+  megusta.innerHTML = cant1 + `<p>Croquetas</p>`;
+  cant1++;
+  event.stopPropagation();
+ })); 
+
 
 
 
