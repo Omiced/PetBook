@@ -109,20 +109,18 @@ btnEnviar.addEventListener("click", function (event) {
 });
 
 function enviarcorreo(nombre, numero, correo, mensaje1) {
-  Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: "empresaPetBook@gmail.com",
-    Password: "9F11527D0A8244A1E7FA577D4A0311747A63",
-    To: "empresaPetBook@gmail.com",
-    From: "empresaPetBook@gmail.com",
-    Subject: nombre,
-    Body: `Recibio un mensaje de ${nombre}, El mensaje es: ${mensaje1}, telefono:${numero} y correo ${correo}`,
-  }).then((message) => {
-    if (message === "OK") {
-      modalSuccess.showModal();
-    }
-    setTimeout(closeModal, SEG_CLOSE_MODAL * 1000);
-  });
+    Email.send({
+    SecureToken : "90fc2f28-1410-4b40-bd7d-c6d27b053631",
+    To : 'sanchezberenice09@gmail.com',
+    From : "empresaPetBook@gmail.com",
+    Subject : nombre,
+    Body : `Recibio un mensaje de ${nombre}, El mensaje es: ${mensaje1}, telefono:${numero} y correo ${correo}`
+}).then((message) => {
+  if (message === "OK") {
+    modalSuccess.showModal();
+  }
+  setTimeout(closeModal, SEG_CLOSE_MODAL * 1000);
+});
 } //btnenviar
 function closeModal() {
   modalSuccess.close();
