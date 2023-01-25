@@ -42,3 +42,19 @@ section{
     font-size: 1.5em;
     text-align: center;
   } */
+
+html{
+    clear:both;
+    /*width: max-content;*/
+}
+
+.carousel-item {
+    position: center;
+    display: none;
+    float: none;
+    width: 100%;
+    height: auto;
+    position: center;
+    
+}
+
