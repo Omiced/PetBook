@@ -120,7 +120,7 @@ btnEnviar.addEventListener("click", function (event) {
     quitarAlertas();
     temporizador();
 
-    addItem(id, base64Img, txtNombre.value, txtDescripcion.value);
+    addItem(base64Img, txtNombre.value, txtDescripcion.value);
     setLocal(publicaciones);
     renderItems(publicaciones);
 
@@ -131,7 +131,7 @@ btnEnviar.addEventListener("click", function (event) {
     tmpimagen.src = "";
 base64Img = "";
     txtNombre.focus();
-    id++;
+    
   }
   //    let inputFocused="";
   //  let elements = document.querySelectorAll("input[type='text'], input[type='password']");
@@ -150,10 +150,9 @@ txtDescripcion.addEventListener("blur", function (event) {
   event.preventDefault();
   event.target.value = event.target.value.trim();
 });
-let id =1;
-function addItem(id, urlImg, name, description) {
+
+function addItem( urlImg, name, description) {
   publicaciones.push({
-    id: id,
     img: urlImg,
     name: name,
     description: description,
@@ -179,13 +178,12 @@ function chooseRender(item) {
     <div class="card card-img" >
       <img src="${item.img}" class="card-img-top img" alt="${item.description}">
       <div class="card-body">
-      <button type="button" class="btn btn-outline-secondary" id="btnLike" value="1" data-counter >Denle una croqueta</button>
-    
-      <img src="images/croquetita.png" alt="" id = "croquetita" align="right"/>
+      <button type="button" class="btn btn-outline-secondary" id="btnLike" value="1" data-counter  ></button>
       <span id = "likes">
       </span>
-        <h5 class="card-title text-center">${item.name}</h5>
-        <p class="card-text ">${item.description}</p>
+        <h4 class="card-title text-center">${item.name}</h4>
+        <p class="card-text " id = "descripcionTexto">${item.description}</p>
+        <p class="card-text " id = "usuario"> publicado por: <b>${usuario}</b><p>
 
       </div>
     </div>
@@ -198,7 +196,8 @@ function chooseRender(item) {
     <div class="card card-text" >
       <div class="card-body">
         <h5 class="card-title text-center">${item.name}</h5>
-        <p class="card-text ">${item.description}</p>
+        <p class="card-text " id ="descripcionTexto">${item.description}</p>
+        <p class="card-text " id = "usuario"> publicado por: <b>${usuario}</b><p>
       </div>
     </div>
     </div>
@@ -252,5 +251,16 @@ item.addEventListener("click", (event) => {
 
 
 
+//  function obtenerLocalStorage2() {
+//   const usuarios = localStorage.getItem("usuarios");
+//   if (!usuarios) return;
+//   usuariosArr = JSON.parse(usuarios);
+// }
 
 
+
+
+const mascota = localStorage.getItem("usuarios");
+let nombreMascota = JSON.parse(mascota);
+let usuario = nombreMascota[0].usuario
+console.log(usuario)
