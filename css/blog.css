@@ -45,7 +45,7 @@ section{
 
 html{
     clear:both;
-    /*width: max-content;*/
+    
 }
 
 .carousel-item {
@@ -58,3 +58,15 @@ html{
     
 }
 
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  @media screen and (max-width: 1023px) {
+    html{
+        clear:both;
+        width: min-content;
+    }
+  }
