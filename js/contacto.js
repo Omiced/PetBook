@@ -107,11 +107,11 @@ btnEnviar.addEventListener("click", function (event) {
   if (!mensaje1) return;
   enviarcorreo(nombre, numero, correo, mensaje1);
 });
-
+//actual PETBOOK
 function enviarcorreo(nombre, numero, correo, mensaje1) {
     Email.send({
     SecureToken : "90fc2f28-1410-4b40-bd7d-c6d27b053631",
-    To : 'sanchezberenice09@gmail.com',
+    To : 'empresaPetBook@gmail.com',
     From : "empresaPetBook@gmail.com",
     Subject : nombre,
     Body : `Recibio un mensaje de ${nombre}, El mensaje es: ${mensaje1}, telefono:${numero} y correo ${correo}`
