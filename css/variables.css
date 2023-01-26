@@ -10,10 +10,18 @@
     --blanco: #FFFFFF;
     --morado: #845EC2;
     --font-nunito: 'Nunito', sans-serif;
-
 }
 
 .center-cosas{
     margin: 0px auto;
+}
+
+.espaciado-top{
+    margin-top: 2rem;
+    /* background-color: red; */
+}
+
+.espaciado-bottom{
+    margin-bottom: 1.5rem;
 }
 

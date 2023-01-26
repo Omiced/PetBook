@@ -21,7 +21,7 @@ let idTimeout;
 
 //REGEX nombre
 //Este REGEX ya incluye el mínimo de caracteres 2 y el máximo es indeterminado
-let nombreRegex = /^[a-zA-Z ]{2,}$/;
+let nombreRegex = /^[a-zA-Z0-9A-ZÁÉÍÓÚ a-zñáéíóú(?¿:.*[@$¡!^\-_)]{2,}$/;
 
 //Este REGEX ya incluye el mínimo de caracteres 10 y el máximo es indeterminado
 let descriptionRegex = /^[a-zA-Z0-9A-ZÁÉÍÓÚ a-zñáéíóú(?¿:.*[@$¡!^\-_)]{10,}$/; //No acepta corchetes []
@@ -59,7 +59,7 @@ function validarNombre() {
   if (txtNombre.value.match(nombreRegex) == null) {
     txtNombre.style.border = "solid red 5px";
     alertaValidaciones.style.display = "block";
-    alertaValidaciones.innerHTML += `<li>El nombre debe contener más de dos carácteres y no puede contener números</li>`;
+    alertaValidaciones.innerHTML += `<li>El nombre debe contener más de dos carácteres</li>`;
   } else {
     txtNombre.style.border = "solid green 5px";
     validos++;

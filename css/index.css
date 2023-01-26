@@ -92,6 +92,11 @@ p{
         font-size: 1.7rem;
         font-weight:650;
     }
+
+    .espaciado-top{
+        margin-top: 0rem;
+        /* background: green; */
+    }
     
 
 
