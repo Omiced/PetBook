@@ -171,14 +171,15 @@ function renderItems(items) {
     itemsContainer.insertAdjacentHTML("afterbegin", chooseRender(item))
   );
 }
-
+let itemId = 0;
 function chooseRender(item) {
+  
   const markupImg = `
   <div class="row justify-content-center">
     <div class="card card-img" >
       <img src="${item.img}" class="card-img-top img" alt="${item.description}">
       <div class="card-body">
-      <button type="button" class="btn btn-outline-secondary" id="btnLike" value="1" data-counter  ></button>
+      <button type="button" class="btn btn-outline-secondary btn-like" id="btnLike" value="1" data-counter  data-id="${itemId}" ></button>
       <span id = "likes">
       </span>
         <h4 class="card-title text-center">${item.name}</h4>
@@ -190,7 +191,7 @@ function chooseRender(item) {
     </div>
     <script  src="/js/Dospublicaciones.js"> </script>
     `;
-
+    itemId++;
   const markupText = `
   <div class="row justify-content-center">
     <div class="card card-text" >
@@ -202,7 +203,9 @@ function chooseRender(item) {
     </div>
     </div>
     `;
+    
   return item.img ? markupImg : markupText;
+  
 }
 
 function obtenerLocalStorage() {
@@ -235,32 +238,46 @@ btnCerrar.addEventListener("click", function (event) {
   window.location.href = "login.html";
 });
 
- let cant1 = 0;
- const cajas = document.querySelectorAll("#container");
- cajas.forEach((item)=>
-item.addEventListener("click", (event) => {
-  const clickedElement = event.target;
-  if (!clickedElement.matches("#btnLike")) {
-    return;
-  }
-  let megusta = document.querySelector("#likes");
-  megusta.innerHTML = cant1 + `<p>Croquetas</p>`;
-  cant1++;
-  event.stopPropagation();
- })); 
-
-
-
-//  function obtenerLocalStorage2() {
-//   const usuarios = localStorage.getItem("usuarios");
-//   if (!usuarios) return;
-//   usuariosArr = JSON.parse(usuarios);
-// }
-
-
-
+//  let cant1 = 0;
+//  const cajas = document.querySelectorAll("#container");
+//  cajas.forEach((item)=>
+// item.addEventListener("click", (event) => {
+//   const clickedElement = event.target;
+//   if (!clickedElement.matches("#btnLike")) {
+//     return;
+//   }
+//   let megusta = document.querySelector("#likes");
+//   megusta.innerHTML = cant1 + `<p>Croquetas</p>`;
+//   cant1++;
+//   event.stopPropagation();
+//  })); 
 
 const mascota = localStorage.getItem("usuarios");
 let nombreMascota = JSON.parse(mascota);
 let usuario = nombreMascota[0].usuario
 console.log(usuario)
+
+
+
+const btnsLike = document.querySelectorAll('.btn-like');
+
+// let count = 0;
+// document.addEventListener("click", function(e){
+//   if(e.target && e.target.classList.contains("btn-like")){
+//      //const count = parseInt(e.target.innerHTML);
+
+//      e.target.innerHTML = count++;
+//   }
+// });
+
+const counters = {};
+document.addEventListener("click", function(e){
+  if(e.target && e.target.classList.contains("btn-like")){
+    const cardId = e.target.getAttribute("data-id");
+    if (!counters[cardId]) {
+      counters[cardId] = 0;
+    }
+    counters[cardId]++;
+    document.querySelector(`[data-id="${cardId}"] + span`).innerHTML = `<p>a <b>${counters[cardId]}</b> mascotas les hace mover la colita</p>` ;
+  }
+});
