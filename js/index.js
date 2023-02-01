@@ -88,7 +88,7 @@ const validarPassword2 = () => {
 //Foreach.Inputs.Formulario - INICIA
 inputs.forEach((input) => {
   input.addEventListener("keyup", validarFormulario);
-  input.addEventListener("blur", validarFormulario);
+  // input.addEventListener("blur", validarFormulario);
 }); //ForEach.Inputs.Formulario - TERMINA
 
 //Event.listener.btnRegistro - INICIA
