@@ -1,4 +1,5 @@
 
+
 /* font Nunito aplicada a todo la página index.html */
 body{
     font-family: var(--font-nunito);
@@ -95,9 +96,8 @@ p{
 
     .espaciado-top{
         margin-top: 0rem;
-        /* background: green; */
     }
-    
+
 
 
 }

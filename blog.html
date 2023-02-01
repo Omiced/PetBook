@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/footer.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/blog.css">
-  <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
     <title>Blog</title>
 </head>
 <body>
@@ -51,160 +53,159 @@
           </div>
         </div>
       </nav>
-       <!--ITERMINA LA NAVBAR-->
-       <h1>Blog</h1>
+      <!--ITERMINA LA NAVBAR-->
+      
+      <!-- CARDS NUEVAS -->
+      <h1 class="espaciado-top">Blog</h1>
 
-       <!--ESPACIO PARA EL CARRUSEL-->
-       
-      <div id="carouselExampleInterval" class="carousel slide container clearfix" data-bs-ride="carousel" style="width:1200px; height:720px;">
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="4000">
-            <img src="https://www.semana.com/resizer/X9nXgkZOJtQfLfGj1sGLrMCa1v4=/1920x1080/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/QWTFZD2U3NFXPGFTYVD6O2CYFY.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h1>¿Sabes cual es la mejor opción de comida para tu mascota?</h1>
-              <p>Compartenos su comida favorita para que todos lo sepán.</p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="4000">
-            <img src="https://realclean.com.mx/wp-content/uploads/2021/11/mascotalimpia.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h1>Hora del Baño</h1>
-              <p>Comparte la hora del baño de tu mascota</p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="4000">
-            <img src="https://www.xtrafondos.com/descargar.php?id=5797&resolucion=2560x1440" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h1>¿Listos para pasear?</h1>
-              <p>Hablanos de los lugares más divertidos para llevar a tu mascota, la comunidad te lo agradecerá!.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      <br><br><br>
-       <!--INICIAN LAS CARDS-->
-       <section> <!--agrupar las primeras 2 cards en una seccion-->
-        
-       <div class="card container" style="width: 18rem;">
-        <img src="images/blog1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Disfraces de halloowen</h5>
-          <p class="card-text">Disfraces bien perrunos para el halloowen.</p>
-          <button type="button" class="btn btn-primary"
-        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; background-color: #FFC75F ; font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal1">
-  Más info.
-</button>
-        </div>
-      </div>
 
-      <div class="card container" style="width: 18rem;">
-        <img src="/images/blog2.jpeg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Cejas de envidia en 5 minutos</h5>
-          <p class="card-text">Se la mas perra en el antro.</p>
-          <button type="button" class="btn btn-primary"
-          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; background-color: #FFC75F; font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal2" >
-    Más info.
-  </button>
-  
-        </div>
-    
-      </div>
-       </section>
-       <br><br><br>
-       <section><!--Seccion 2-->
-      <div class="card container" style="width: 18rem;">
-        <img src="/images/blog3.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Aprende a programar en CatScript</h5>
-          <p class="card-text">Programate unos robots y desaste de tu humano inutíl.</p>
-          <button type="button" class="btn btn-primary"
-          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; background-color: #FFC75F; font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal3">
-    Más info.
-  </button>
-        </div>
-      </div>
-      <div class="card container" style="width: 18rem;">
-        <img src="/images/blog4.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Como hacer petoks</h5>
-          <p class="card-text">Vuelvete influencer con unos petoks bien chidos.</p>
-          <button type="button" class="btn btn-primary"
-          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; background-color: #FFC75F; font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal4">
-    Más info.
-  </button>
-        </div>
-      </div>
-       </section>
-       <br><br><br>
-       <section><!--Seccion 3-->
-      <div class="card container" style="width: 18rem;">
-        <img src="/images/blog5.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Relajate Carnal!</h5>
-          <p class="card-text">Meditacion para sacar el estress, FUA!!.</p>
-          <button type="button" class="btn btn-primary"
-          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; background-color: #FFC75F; font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal5" >
-    Más info.
-  </button>
-        </div>
-      </div>
+<h2 style="display: none;">Flickity - keyhole parallax</h2>
 
-      <div class="card container" style="width: 18rem;">
-        <img src="images/blog6.jpeg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Aprende a bailar</h5>
-          <p class="card-text">Aprende a bailar para que ya no te quedes sentado en las riestas.</p>
-          <button type="button" class="btn btn-primary"
-          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; background-color: #FFC75F; font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal6">
-    Más info.
-  </button>
-        </div>
-      </div>
-       </section><!--fin de las cards-->
-<!--INICIAN LOS MODALES-->
-
-<!-- Modal -->
-<div class="modal fade" id="Modal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header" style = "background-color: #e2c287;">
-        <h5 class="modal-title" id="exampleModalLabel">Aprende a bailar</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" style=" background-color: #e2c287">
-        <img src="images/blog6.jpeg" class="card-img-top" alt="...">
-       <p> Aprende a bailar para que ya no te quedes sentado en las riestas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi tenetur eum, accusantium velit odit quae sit, nisi possimus quaerat delectus architecto doloribus, rerum laudantium tempora qui. Impedit necessitatibus exercitationem architecto?
-</p>     
-      </div>
-      <div class="modal-footer" style = "background-color: #e2c287;">
-        
-    
-      </div>
+<div class="carousel">
+  <div class="carousel-cell">
+    <img src="https://www.semana.com/resizer/X9nXgkZOJtQfLfGj1sGLrMCa1v4=/1920x1080/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/QWTFZD2U3NFXPGFTYVD6O2CYFY.jpg" alt="orange tree" />
+    <div class="text-card">
+      <h5 class="h5-desktop">¿Sabes cual es la mejor opción de comida para tu mascota?</h5>
+      <h5 class="h5-mobile">¿Sabes cual es la mejor opción de <br> comida para tu mascota?</h5>
+      <a href="Publicaciones.html" target="_blank" class="a-desktop">Compártenos su comida favorita para que todos lo sepan.</a>
+      <a href="Publicaciones.html" target="_blank" class="a-mobile">Compártenos su comida favorita <br> para que todos lo sepan.</a>
+    </div>
+  </div>
+  <div class="carousel-cell">
+    <img src="https://realclean.com.mx/wp-content/uploads/2021/11/mascotalimpia.jpg" alt="orange tree" />
+    <div class="text-card">
+      <h5 class="h5-desktop">¡Es la hora del baño!</h5>
+      <h5 class="h5-mobile">¡Es la hora del baño!</h5>
+      <a href="Publicaciones.html" target="_blank" class="a-desktop">Comparte la hora del baño de tu mascota</a>
+      <a href="Publicaciones.html" target="_blank" class="a-mobile">Comparte la hora <br> del baño de tu mascota</a>
+    </div>
+  </div>
+  <div class="carousel-cell">
+    <img src="https://www.xtrafondos.com/descargar.php?id=5797&resolucion=2560x1440" alt="orange tree" />
+    <div class="text-card">
+      <h5 class="h5-desktop">¿Listos para pasear?</h5>
+      <h5 class="h5-mobile">¿Listos para pasear?</h5>
+      <a href="Publicaciones.html" target="_blank" class="a-desktop">Cuéntanos de los lguares más bonitos para pasear a tu mascota</a>
+      <a href="Publicaciones.html" target="_blank" class="a-mobile">Cuéntanos de los lugares más <br> bonitos para pasear a tu mascota</a>
+    </div>
+  </div>
+  <div class="carousel-cell">
+    <img src="https://images.unsplash.com/photo-1592468257342-8375cb556a69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80" alt="orange tree" />
+    <div class="text-card">
+      <h5 class="h5-desktop">Premios saludables para tu mascota</h5>
+      <h5 class="h5-mobile">Premios saludables para tu mascota</h5>
+      <a href="Publicaciones.html" target="_blank" class="a-desktop">¿Tienes ideas? Nos encantaría escucharlas</a>
+      <a href="Publicaciones.html" target="_blank" class="a-mobile">¿Tienes ideas? <br> Nos encantaría escucharlas</a>
+    </div>
+  </div>
+  <div class="carousel-cell">
+    <img src="https://images.unsplash.com/photo-1494947665470-20322015e3a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="orange tree" />
+    <div class="text-card">
+      <h5 class="h5-desktop">¿Tienes tiempo libre y amas a los animales?</h5>
+      <h5 class="h5-mobile">¿Tienes tiempo libre y amas a los animales?</h5>
+      <a href="Publicaciones.html" target="_blank" class="a-desktop">Póstulate como paseador de perros ¡Nos encantaría conocerte!</a>
+      <a href="Publicaciones.html" target="_blank" class="a-mobile">Póstulate como paseador de perros<br>¡Nos encantaría conocerte!</a>
     </div>
   </div>
 </div>
 
+
+    <main class="bg-main container">
+      <div class="row cards-space cards-blog-espaciado">
+
+        <div class="card" style="width: 18rem;">
+          <img src="https://i2-prod.aberdeenlive.news/incoming/article7719581.ece/ALTERNATES/s1200b/1_JS248847499.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Disfraces de Halloowen</h5>
+            <p class="card-text">Disfraces bien perrunos para el halloowen este 31 de octubre.</p>
+            <button type="button" class="btn btn-warning" style="font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal1">Más info.</button> 
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="https://www.meme-arsenal.com/memes/bcae2802aaa664ff19a44e9d6dbd0522.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Cejas de envidia en 5 minutos</h5>
+              <p class="card-text">Sé la más perra en el antro.</p>
+              <button type="button" class="btn btn-warning" style="font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal2" >Más info.</button>         
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="https://i.redd.it/l9blrqz6uxe31.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Aprende a programar en CatScript</h5>
+            <p class="card-text">Programate unos robots y desaste de tu humano inútil.</p>
+            <button type="button" class="btn btn-warning" style="font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal3" >Más info.</button>
+          </div>
+        </div>
+
+
+        <div class="card" style="width: 18rem;">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI459zvSe9Huel7tCaMbe1FI-FRj4MFnbk3Q&usqp=CAU" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Cómo hacer petoks</h5>
+            <p class="card-text">Vuélvete influencer con unos petoks bien chidos (con todo y producción).</p>
+            <button type="button" class="btn btn-warning" style="font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal4" >Más info.</button>
+          </div>
+        </div>
+
+
+        <div class="card" style="width: 18rem;">
+          <img src="images/blog5.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">¡Relájate Carnal!</h5>
+            <p class="card-text">Meditación para sacar el estrés, FUAA!!</p>
+            <button type="button" class="btn btn-warning" style="font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal5" >Más info.</button>
+          </div>
+        </div>
+
+
+        <div class="card" style="width: 18rem;">
+          <img src="images/blog6.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Aprende a bailar</h5>
+            <p class="card-text">Aprende a bailar para que ya no te quedes sentado solo en las fiestas.</p>
+            <button type="button" class="btn btn-warning" style="font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal6" >Más info.</button>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="https://www.scotsman.com/webimg/b25lY21zOjgxMzk1YzdkLTVlNjQtNDViOC05OWIyLWQ4N2E0YmM4OWRlZjowOTdlYTU2NS02Njc1LTQwODgtOTRhZS0wMjQ3M2EzZTc5OGQ=.jpg?width=640&quality=65&smart&enable=upscale" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Veloz como el viento</h5>
+            <p class="card-text">Ejercicios para correr 3x más rápido en el pasto</p>
+            <button type="button" class="btn btn-warning" style="font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal7" >Más info.</button>
+          </div>
+        </div>
+        
+        <div class="card" style="width: 18rem;">
+          <img src="https://image.petmd.com/files/styles/863x625/public/2021-11/sad-dog.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Estoy castigado, ¿qué hago?</h5>
+            <p class="card-text">3 maneras de decirle a tu dueño que lo sientes.</p>
+            <button type="button" class="btn btn-warning" style="font-family: var(--font-nunito); color: black;"  data-bs-toggle="modal" data-bs-target="#Modal8" >Más info.</button>
+          </div>
+        </div>
+
+
+
+      </div>
+    </main>
+
+<!--INICIAN LOS MODALES-->
 <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header" style = "background-color: #e2c287;">
+      <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Disfraces de halloowen</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body" style=" background-color: #e2c287">
-        <img src="images/blog1.jpg" class="card-img-top" alt="...">
-       <p>Disfraces bien perrunos para el halloowen. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vitae perspiciatis pariatur eum, tenetur in ab eaque atque sed inventore obcaecati non est corporis exercitationem perferendis laboriosam voluptate maiores. At.
+      <div class="modal-body">
+        <img src="https://i2-prod.aberdeenlive.news/incoming/article7719581.ece/ALTERNATES/s1200b/1_JS248847499.jpg" class="card-img-top" alt="...">
+       <p>Disfraces bien perrunos para el halloowen este 31 de octubre.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vitae perspiciatis pariatur eum, tenetur in ab eaque atque sed.</p>
       </div>
-      <div class="modal-footer" style = "background-color: #e2c287;">
+      <div class="modal-footer" style = "background-color: FFC75F;">
         
     
       </div>
@@ -215,16 +216,15 @@
 <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header" style = "background-color: #e2c287;">
+      <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Cejas de envidia en 5 minutos</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body" style=" background-color: #e2c287">
-        <img src="images/blog2.jpeg" class="card-img-top" alt="...">
-       <p> Sé la más perra en el antro Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis facere dolor suscipit provident similique unde ad. Recusandae, nihil aliquid iusto, non explicabo error rem accusamus delectus laborum, debitis officia temporibus.
-</p>     
+      <div class="modal-body">
+        <img src="https://i.pinimg.com/originals/91/90/55/919055a7ba40608ebc2d706446de8f80.jpg" class="card-img-top" alt="...">
+       <p> Sé la más perra en el antro Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis facere dolor suscipit provident similique unde ad. Recusandae, nihil aliquid iusto, non explicabo error rem accusamus delectus laborum, debitis officia temporibus.</p>     
       </div>
-      <div class="modal-footer" style = "background-color: #e2c287;">
+      <div class="modal-footer" style = "background-color: FFC75F;">
         
     
       </div>
@@ -235,16 +235,15 @@
 <div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header" style = "background-color: #e2c287;">
+      <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Aprende a programar en CatScript</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body" style=" background-color: #e2c287">
-        <img src="images/blog3.jpg" class="card-img-top" alt="...">
-       <p> Programate unos robots y desaste de tu humano inutíl. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quibusdam nesciunt repellendus saepe totam nisi in consectetur minima harum voluptas. Alias odit atque enim officiis delectus ipsa inventore quis eligendi.
-</p>     
+      <div class="modal-body">
+        <img src="https://i.redd.it/l9blrqz6uxe31.jpg" class="card-img-top" alt="...">
+       <p> Programate unos robots y desaste de tu humano inutíl. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quibusdam nesciunt repellendus saepe totam nisi in consectetur minima harum voluptas. Alias odit atque enim officiis delectus ipsa inventore quis eligendi.</p>     
       </div>
-      <div class="modal-footer" style = "background-color: #e2c287;">
+      <div class="modal-footer" style = "background-color: #FFC75F;">
         
     
       </div>
@@ -255,16 +254,15 @@
 <div class="modal fade" id="Modal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header" style = "background-color: #e2c287;">
+      <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Cómo hacer PeToks</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body" style=" background-color: #e2c287">
-        <img src="images/blog4.jpg" class="card-img-top" alt="...">
-       <p> Vuelvete influencer con unos petoks bien chidos Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi consequuntur corporis inventore! Nisi voluptatem, quod consectetur necessitatibus ut facere assumenda minus dolorum. Aperiam illo ratione repudiandae necessitatibus expedita placeat consectetur.
-</p>     
+      <div class="modal-body">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI459zvSe9Huel7tCaMbe1FI-FRj4MFnbk3Q&usqp=CAU" class="card-img-top" alt="...">
+       <p> Vuelvete influencer con unos petoks bien chidos Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi consequuntur corporis inventore! Nisi voluptatem, quod consectetur necessitatibus ut facere assumenda minus dolorum. Aperiam illo ratione repudiandae necessitatibus expedita placeat consectetur.</p>     
       </div>
-      <div class="modal-footer" style = "background-color: #e2c287;">
+      <div class="modal-footer" style = "background-color: FFC75F;">
         
     
       </div>
@@ -275,22 +273,79 @@
 <div class="modal fade" id="Modal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header" style = "background-color: #e2c287;">
+      <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Relájate Carnal</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body" style=" background-color: #e2c287">
+      <div class="modal-body">
         <img src="images/blog5.jpg" class="card-img-top" alt="...">
-       <p>Meditacion para sacar el estress, FUA!!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis modi et aliquam! Et beatae sint dolor, praesentium culpa corrupti commodi? Dolorem, eaque consequatur! Blanditiis rem consequuntur aliquam numquam, praesentium ullam.
-        </p> 
+       <p>Meditacion para sacar el estress, FUA!!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis modi et aliquam! Et beatae sint dolor, praesentium culpa corrupti commodi? Dolorem, eaque consequatur! Blanditiis rem consequuntur aliquam numquam, praesentium ullam.</p> 
       </div>
-      <div class="modal-footer" style = "background-color: #e2c287;">
+      <div class="modal-footer" style = "background-color: FFC75F;">
         
     
       </div>
     </div>
   </div>
 </div>
+
+
+<div class="modal fade" id="Modal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Aprende a bailar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <div class="modal-body">
+          <img src="images/blog6.jpeg" class="card-img-top" alt="...">
+          <p> Aprende a bailar para que ya no te quedes sentado en las riestas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi tenetur eum, accusantium velit odit quae sit, nisi possimus quaerat delectus architecto doloribus, rerum laudantium tempora qui. Impedit necessitatibus exercitationem architecto?</p>     
+        </div>
+      <div class="modal-footer" style = "background-color: FFC75F;"></div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="Modal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Veloz como el viento</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <div class="modal-body">
+          <img src="https://www.scotsman.com/webimg/b25lY21zOjgxMzk1YzdkLTVlNjQtNDViOC05OWIyLWQ4N2E0YmM4OWRlZjowOTdlYTU2NS02Njc1LTQwODgtOTRhZS0wMjQ3M2EzZTc5OGQ=.jpg?width=640&quality=65&smart&enable=upscale" class="card-img-top" alt="...">
+          <p>Ejercicios para correr 3x más rápido en el pasto. Aspernatur minima vel ullam eveniet incidunt, alias quia modi eligendi mollitia animi, pariatur totam consectetur accusantium debitis fugit doloremque perspiciatis, illo sequi.</p>     
+        </div>
+      <div class="modal-footer" style = "background-color: FFC75F;"></div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="Modal8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Estoy castigado, ¿qué hago?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <div class="modal-body">
+          <img src="https://image.petmd.com/files/styles/863x625/public/2021-11/sad-dog.jpg" class="card-img-top" alt="...">
+          <p>3 maneras de decirle a tu dueño que lo sientes. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur minima vel ullam eveniet incidunt, alias quia modi eligendi mollitia animi, pariatur totam consectetur accusantium debitis fugit doloremque perspiciatis, illo sequi.</p>     
+        </div>
+      <div class="modal-footer" style = "background-color: FFC75F;"></div>
+
+    </div>
+  </div>
+</div>
+
+
+
 <!--TERMINAN LOS MODALES-->
       <!--INICIA EL FOOTER-->
       <footer>
@@ -311,10 +366,15 @@
         <p class="text-center">Copyright 2022 &#xa9 Generation México</p>
       </footer>
      <!--TERMINA EL FOOTER-->
+     <script src="js/flickity.js"></script>
+     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+     
+     <script src="js/blog.js"></script>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"></script>
+
       
 </body>
 </html>

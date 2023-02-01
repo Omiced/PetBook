@@ -1,72 +1,134 @@
-h1{
-    text-align: center;
+body{
+    font-family: var(--font-nunito);
     
 }
 
+.bg-main{
+    margin-top: 5rem;
+    border-radius: 0.5rem;
+    
+    background-color: #ffffff;
+    opacity: 0.9;
+    background-image: radial-gradient(#FFC75F 5px, #ffffff 2px);
+    background-size: 35px 35px;
 
+}
 
+.cards-blog-espaciado{
+    padding: 2rem;
+}
 
+.card{
+    /* margin: 1rem; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0px;
+    /* background-color: aqua;
+    border: 3px solid red; */
+}
 
-
-section{
-    display: flex;
+.cards-space{
     justify-content: space-evenly;
-    
-   
+    margin-top: 4rem;
 }
 
-.card-img-top{
-    width: 286px;
-    height: 250px;
-}
-
-/* .card{
-    background: rgba(0, 0, 0, 0.9);
-    color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    transition: all .5s;
-}
-.card p {
-    width: 60%;
-    height: 40%;
-    position: absolute;
-    top: -100vh;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    font-size: 1.5em;
+h1{
+    font-weight: 600;
     text-align: center;
-  } */
-
-html{
-    clear:both;
-    
+    font-family: (--font-nunito);
 }
 
-.carousel-item {
-    position: center;
+
+
+/* CARRUSEL */
+/* external css: flickity.css */
+
+/* external css: flickity.css, fullscreen.css */
+
+* { box-sizing: border-box; }
+
+body { font-family: (--font-nunito); }
+
+/* .carousel {
+  background: #FFECCC;
+} */
+
+.carousel-cell {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.carousel-cell img {
+  display: block;
+  height: 200px;
+}
+
+
+/* DESKTOP */
+
+/* clases extra carrusel */
+
+.text-card{
+    text-align: center;
+}
+
+.h5-desktop{
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.h5-mobile{
     display: none;
-    float: none;
-    width: 100%;
-    height: auto;
-    position: center;
-    
 }
 
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+
+.text-card a{
+    color: grey;
+
+}
+
+/* .a-desktop{
+} */
+
+.a-mobile{
+    display: none;
+}
+
+
+/* Media Query Desktop */
+@media screen and ( min-width: 768px ) {
+
+
+  .carousel-cell img {
+    display: block;
+    height: 490px;
   }
 
-  @media screen and (max-width: 1023px) {
-    html{
-        clear:both;
-        width: min-content;
+}
+
+/* Media query texto MOBILE*/
+@media only screen and (max-width: 600px) {
+    
+    .h5-desktop{
+        display: none;
     }
-  }
+
+    .h5-mobile{
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .a-desktop{
+        display: none;
+    }
+    
+    .a-mobile{
+        display: block;
+        font-size: 0.8rem;
+    }
+
+}
+
