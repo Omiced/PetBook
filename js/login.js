@@ -51,7 +51,7 @@ btnRegistroEl.addEventListener("click", (e) => {
     return;
   }
   if (!validarDatos(usuariosArr, usuarioValue, passwordValue)) {
-    renderAlert("El nombre de usuario o la contraseña son incorrectos");
+    renderAlert("El correo o la contraseña son incorrectos");
     return;
   }
   divEl.innerHTML = "";
